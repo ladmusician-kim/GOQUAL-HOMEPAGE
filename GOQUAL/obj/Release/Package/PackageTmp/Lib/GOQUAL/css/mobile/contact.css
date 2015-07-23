@@ -1,0 +1,57 @@
+
+.goqual_tab, .goqual_tab li {
+    width: 100% !important;
+    margin-top: 15px;
+}
+.goqual_company_text_color {
+    color: #414141 !important;
+}
+.contact-form input.ci-field {
+    color: #414141 !important;
+    border-bottom: 1px solid #414141 !important;
+}
+.contact-form textarea.ci-area {
+    color: #414141 !important;
+    border: 1px solid #414141 !important;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #414141 !important;
+}
+.goqual_table th, td {
+    text-align: center;
+}
+.goqual_table_button {
+    height: 44px;
+    line-height: 44px;
+    width: 47px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+.goqual_table_button_eng {
+    height: 44px;
+    line-height: 44px;
+    width: 63px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+.goqual_table_password {
+    height: 44px !important;
+}
+
+.goqual_table_link {
+    color: #adadad !important;
+}
+.goqual_table_link:hover {
+    cursor: pointer !important;
+}
+.pager li > a, .pager li > span {
+    border: 1px solid #414141 !important;
+    color: #414141 !important;
+}
+.tpl-minimal-tabs > li > a {
+    border-color: #c1c1c1;
+}
+.tpl-minimal-tabs li.active a, .tpl-minimal-tabs li.active a {
+    background: #222 !important;
+    color: white !important;
+}

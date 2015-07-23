@@ -1,0 +1,137 @@
+.goqual_menu_header {
+    width: 135px;
+    margin-top: 10px;
+}
+
+.goqual_table th, td {
+    text-align: center;
+}
+.goqual_table_button {
+    height: 44px;
+    line-height: 44px;
+    width: 47px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+.goqual_table_button_eng {
+    height: 44px;
+    line-height: 44px;
+    width: 63px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+.goqual_tab_title {
+    padding-left: 34px;
+    padding-top: 20px;
+    font-size: 23px;
+}
+.goqual_tab_table_body {
+    padding: 30px;
+}
+.goqual_comment {
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding-left: 9px;
+    font-size: 14px;
+    padding: 5px 12px;
+}
+.section {
+    text-align: center;
+}
+
+.img_container {
+    height: inherit;
+    vertical-align: middle;
+    text-align: center;
+    display: table-cell;
+}
+.goqual_image {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.goqual_lang_ko {
+    margin-left: 50px;
+}
+
+@media (max-width: 768px) {
+  .goqual_lang_menu {
+    display: none;
+  }
+}
+
+.goqual_lang_ko:hover {
+    background: #fff !important;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.goqual_lang_eng:hover {
+    background: #fff !important;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.goqual_lang_menu:hover {
+    background: #fff !important;
+    text-decoration: none;
+}
+
+
+
+
+/* product */
+.goqual_product_1_body {
+    height: inherit;
+    background-image: url('/Lib/GOQUAL/images/product/background/product_1_background.png');
+    background-repeat: no-repeat;
+    background-position-x: 40%;
+    background-position-y: 50%;
+}
+.goqual_product_1_text {
+    position: relative;
+    left: 16%;
+}
+
+.goqual_product_2_body {
+    height: inherit;
+    background-image: url('/Lib/GOQUAL/images/product/background/product_2_background.png');
+    background-repeat: no-repeat;
+}
+.goqual_product_2_text {
+    position: relative;
+    margin-top: 6%;
+    left: 4%;
+}
+
+.goqual_product_3_body {
+    height: inherit;
+    background-image: url('/Lib/GOQUAL/images/product/background/product_3_background.png');
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+}
+.goqual_product_3_text {
+    position: relative;
+    right: 20%;
+}
+
+.goqual_product_4_body {
+    height: inherit;
+    background-image: url('/Lib/GOQUAL/images/product/background/product_4_background.png');
+    background-repeat: no-repeat;
+    background-position-y: 83%
+}
+.goqual_product_4_text {
+    position: relative;
+    left: 15%;
+}
+
+.goqual_product_5_body {
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.goqual_member {
+    width: 263px;
+    height: 301px;
+}

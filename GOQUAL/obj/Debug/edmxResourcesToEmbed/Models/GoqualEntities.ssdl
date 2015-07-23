@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GoqualDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="GoqualDBStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="GoqualDB.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Advise" EntityType="GoqualDB.Store.Advise" store:Type="Tables" Schema="wsbuem" />
+    <EntitySet Name="AdviseComment" EntityType="GoqualDB.Store.AdviseComment" store:Type="Tables" Schema="wsbuem" />
+    <EntitySet Name="Blog" EntityType="GoqualDB.Store.Blog" store:Type="Tables" Schema="wsbuem" />
+    <EntitySet Name="BlogImage" EntityType="GoqualDB.Store.BlogImage" store:Type="Tables" Schema="wsbuem" />
+    <EntitySet Name="BlogToBlogImage" EntityType="GoqualDB.Store.BlogToBlogImage" store:Type="Tables" Schema="wsbuem" />
+    <EntitySet Name="BlogType" EntityType="GoqualDB.Store.BlogType" store:Type="Tables" Schema="wsbuem" />
+    <EntitySet Name="Comment" EntityType="GoqualDB.Store.Comment" store:Type="Tables" Schema="wsbuem" />
+    <EntitySet Name="Lunch" EntityType="GoqualDB.Store.Lunch" store:Type="Tables" Schema="wsbuem" />
+    <EntitySet Name="News" EntityType="GoqualDB.Store.News" store:Type="Tables" Schema="wsbuem" />
+    <EntitySet Name="NewsComment" EntityType="GoqualDB.Store.NewsComment" store:Type="Tables" Schema="wsbuem" />
+    <EntitySet Name="SomelightUser" EntityType="GoqualDB.Store.SomelightUser" store:Type="Tables" Schema="wsbuem" />
+    <EntitySet Name="User" EntityType="GoqualDB.Store.User" store:Type="Tables" Schema="wsbuem" />
+    <AssociationSet Name="FK_Advise_AdviseComment" Association="GoqualDB.Store.FK_Advise_AdviseComment">
+      <End Role="Advise" EntitySet="Advise" />
+      <End Role="AdviseComment" EntitySet="AdviseComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AdviseComment_AdviseComment1" Association="GoqualDB.Store.FK_AdviseComment_AdviseComment1">
+      <End Role="AdviseComment" EntitySet="AdviseComment" />
+      <End Role="AdviseComment1" EntitySet="AdviseComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blog_BlogToBlogImage" Association="GoqualDB.Store.FK_Blog_BlogToBlogImage">
+      <End Role="Blog" EntitySet="Blog" />
+      <End Role="BlogToBlogImage" EntitySet="BlogToBlogImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blog_BlogType" Association="GoqualDB.Store.FK_Blog_BlogType">
+      <End Role="BlogType" EntitySet="BlogType" />
+      <End Role="Blog" EntitySet="Blog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Blog_Comment1" Association="GoqualDB.Store.FK_Blog_Comment1">
+      <End Role="Blog" EntitySet="Blog" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogImage_BlogToBlogImage" Association="GoqualDB.Store.FK_BlogImage_BlogToBlogImage">
+      <End Role="BlogImage" EntitySet="BlogImage" />
+      <End Role="BlogToBlogImage" EntitySet="BlogToBlogImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comment_Comment" Association="GoqualDB.Store.FK_Comment_Comment">
+      <End Role="Comment" EntitySet="Comment" />
+      <End Role="Comment1" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_NewsComment" Association="GoqualDB.Store.FK_News_NewsComment">
+      <End Role="News" EntitySet="News" />
+      <End Role="NewsComment" EntitySet="NewsComment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_NewsComment_NewsComment1" Association="GoqualDB.Store.FK_NewsComment_NewsComment1">
+      <End Role="NewsComment" EntitySet="NewsComment" />
+      <End Role="NewsComment1" EntitySet="NewsComment" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Advise">
+    <Key>
+      <PropertyRef Name="_adviseid" />
+    </Key>
+    <Property Name="_adviseid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="content" Type="text" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="updated" Type="datetime" Nullable="false" />
+    <Property Name="hit" Type="int" Nullable="false" />
+    <Property Name="password" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AdviseComment">
+    <Key>
+      <PropertyRef Name="_advisecommentid" />
+    </Key>
+    <Property Name="_advisecommentid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="for_adviseid" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="comment" Type="text" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="updated" Type="datetime" Nullable="false" />
+    <Property Name="for_advisecommentid" Type="int" />
+    <Property Name="password" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="_blogid" />
+    </Key>
+    <Property Name="_blogid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="text" Nullable="false" />
+    <Property Name="content" Type="text" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="updated" Type="datetime" Nullable="false" />
+    <Property Name="for_blogtypeid" Type="int" Nullable="false" />
+    <Property Name="hit" Type="int" />
+  </EntityType>
+  <EntityType Name="BlogImage">
+    <Key>
+      <PropertyRef Name="_blogimageid" />
+    </Key>
+    <Property Name="_blogimageid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="content" Type="varbinary(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogToBlogImage">
+    <Key>
+      <PropertyRef Name="for_blogid" />
+      <PropertyRef Name="for_blogimageid" />
+    </Key>
+    <Property Name="for_blogid" Type="int" Nullable="false" />
+    <Property Name="for_blogimageid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogType">
+    <Key>
+      <PropertyRef Name="_blogtypeid" />
+    </Key>
+    <Property Name="_blogtypeid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="label" Type="nchar" Nullable="false" MaxLength="45" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="_commentid" />
+    </Key>
+    <Property Name="_commentid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="for_blogid" Type="int" Nullable="false" />
+    <Property Name="name" Type="nchar" Nullable="false" MaxLength="45" />
+    <Property Name="comment" Type="text" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="updated" Type="datetime" Nullable="false" />
+    <Property Name="for_commentid" Type="int" />
+    <Property Name="password" Type="text" />
+  </EntityType>
+  <EntityType Name="Lunch">
+    <Key>
+      <PropertyRef Name="_lunchid" />
+    </Key>
+    <Property Name="_lunchid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="label" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="address" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="hit" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="_newsid" />
+    </Key>
+    <Property Name="_newsid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="content" Type="text" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="updated" Type="datetime" Nullable="false" />
+    <Property Name="hit" Type="int" Nullable="false" />
+    <Property Name="password" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsComment">
+    <Key>
+      <PropertyRef Name="_newscommentid" />
+    </Key>
+    <Property Name="_newscommentid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="for_newsid" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="comment" Type="text" Nullable="false" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="updated" Type="datetime" Nullable="false" />
+    <Property Name="for_newscommentid" Type="int" />
+    <Property Name="password" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SomelightUser">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="regid" Type="text" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="partnername" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="partnerphone" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="emoticoncount" Type="int" Nullable="false" />
+    <Property Name="invitecount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="_userid" />
+    </Key>
+    <Property Name="_userid" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="created" Type="date" Nullable="false" />
+    <Property Name="logined" Type="date" Nullable="false" />
+    <Property Name="isdeprecated" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Advise_AdviseComment">
+    <End Role="Advise" Type="GoqualDB.Store.Advise" Multiplicity="1" />
+    <End Role="AdviseComment" Type="GoqualDB.Store.AdviseComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Advise">
+        <PropertyRef Name="_adviseid" />
+      </Principal>
+      <Dependent Role="AdviseComment">
+        <PropertyRef Name="for_adviseid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AdviseComment_AdviseComment1">
+    <End Role="AdviseComment" Type="GoqualDB.Store.AdviseComment" Multiplicity="0..1" />
+    <End Role="AdviseComment1" Type="GoqualDB.Store.AdviseComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AdviseComment">
+        <PropertyRef Name="_advisecommentid" />
+      </Principal>
+      <Dependent Role="AdviseComment1">
+        <PropertyRef Name="for_advisecommentid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blog_BlogToBlogImage">
+    <End Role="Blog" Type="GoqualDB.Store.Blog" Multiplicity="1" />
+    <End Role="BlogToBlogImage" Type="GoqualDB.Store.BlogToBlogImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="_blogid" />
+      </Principal>
+      <Dependent Role="BlogToBlogImage">
+        <PropertyRef Name="for_blogid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blog_BlogType">
+    <End Role="BlogType" Type="GoqualDB.Store.BlogType" Multiplicity="1" />
+    <End Role="Blog" Type="GoqualDB.Store.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogType">
+        <PropertyRef Name="_blogtypeid" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="for_blogtypeid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Blog_Comment1">
+    <End Role="Blog" Type="GoqualDB.Store.Blog" Multiplicity="1" />
+    <End Role="Comment" Type="GoqualDB.Store.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="_blogid" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="for_blogid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogImage_BlogToBlogImage">
+    <End Role="BlogImage" Type="GoqualDB.Store.BlogImage" Multiplicity="1" />
+    <End Role="BlogToBlogImage" Type="GoqualDB.Store.BlogToBlogImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogImage">
+        <PropertyRef Name="_blogimageid" />
+      </Principal>
+      <Dependent Role="BlogToBlogImage">
+        <PropertyRef Name="for_blogimageid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comment_Comment">
+    <End Role="Comment" Type="GoqualDB.Store.Comment" Multiplicity="0..1" />
+    <End Role="Comment1" Type="GoqualDB.Store.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comment">
+        <PropertyRef Name="_commentid" />
+      </Principal>
+      <Dependent Role="Comment1">
+        <PropertyRef Name="for_commentid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_NewsComment">
+    <End Role="News" Type="GoqualDB.Store.News" Multiplicity="1" />
+    <End Role="NewsComment" Type="GoqualDB.Store.NewsComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="_newsid" />
+      </Principal>
+      <Dependent Role="NewsComment">
+        <PropertyRef Name="for_newsid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_NewsComment_NewsComment1">
+    <End Role="NewsComment" Type="GoqualDB.Store.NewsComment" Multiplicity="0..1" />
+    <End Role="NewsComment1" Type="GoqualDB.Store.NewsComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NewsComment">
+        <PropertyRef Name="_newscommentid" />
+      </Principal>
+      <Dependent Role="NewsComment1">
+        <PropertyRef Name="for_newscommentid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

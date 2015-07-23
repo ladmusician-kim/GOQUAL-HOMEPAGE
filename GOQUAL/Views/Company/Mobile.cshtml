@@ -1,0 +1,461 @@
+﻿@model GOQUAL.Views.Company.IndexViewModel
+@{
+    Layout = "~/Views/Shared/_MobileLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/GOQUAL/css/mobile/company.css" rel="stylesheet" />
+}
+
+<!-- Navigation panel -->
+<nav class="main-nav js-stick stick-fixed">
+    <div class="full-wrapper relative clearfix">
+        <div class="nav-logo-wrap local-scroll">
+            <a href="#top" class="logo">
+                <img src="~/Lib/GOQUAL/images/ci/1.png" width="80" height="27" alt="" /></a>
+        </div>
+        <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+        <div class="inner-nav desktop-nav">
+            <ul class="clearlist scroll-nav local-scroll">
+                <li class="active"><a href="/Home/Mobile?lang=@(Model.Lang)">HOME</a></li>
+                <li><a href="/Company/Mobile?lang=@(Model.Lang)">COMPANY</a></li>
+                <li><a href="/Product/Mobile?lang=@(Model.Lang)">PRODUCT</a></li>
+                <li><a href="/Contact/Mobile?lang=@(Model.Lang)">CONTACT</a></li>
+                <li><a href="/Joinus/Mobile?lang=@(Model.Lang)">JOIN US</a></li>
+                <li><a href="/Info/Mobile?lang=@(Model.Lang)">NEWS</a></li>
+                <!-- Item With Sub -->
+                <li>
+                    <a href="#" class="mn-has-sub">LANGUAGE <i class="fa fa-angle-down"></i></a>
+                    <ul class="mn-sub">
+                        <li><a href="/Company/Mobile?lang=0">KOREA</a></li>
+                        <li><a href="/Company/Mobile?lang=1">ENGLISH</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- Fullwidth Slider -->
+<div class="fullwidth-slider owl-carousel bg-dark" id="top">
+    <section class="page-section bg-scroll bg-dark-alfa-90"
+        data-background="/Lib/GOQUAL/images/member/youtube.png">
+        <div class="container relative">
+            <div class="align-center animate-init" data-anim-type="bounce-in" data-anim-delay="100">
+                <a href="http://www.youtube.com/watch?v=9hZJgRE_Nhw" class="big-icon-link lightbox-gallery-1 mfp-iframe"><span class="big-icon"><i class="fa fa-play"></i></span><span class="wide-heading">Introducing</span></a>
+                <div class="sub-heading">
+                    corporation GOQUAL
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- company introduct -->
+<div class="fullwidth-slider owl-carousel">
+    <section class="page-section bg-scroll bg-color-white">
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_1_1.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pt-sm-0 animate-init align-center" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        @if (Model.Lang == 1)
+                        {
+                            <h3 class="uppercase goqual_title">Company Introduction</h3>
+                            <div class="section-heading align-left mb-50 mb-xxs-10 goqual_company_text" style="letter-spacing: 0px;">
+                                GOQUAL is a company that develops and distributes IoT product.
+                                The meaning of each letter in GOQUAL implis 'Go towards better product quality' and 'enhance product quality'
+                                We put a lot of effort into making exceptional product
+                            </div>
+                        }
+                        else
+                        {
+                            <h3 class="uppercase goqual_title">Company Introduction</h3>
+                            <div class="section-heading align-left mb-20 mb-xxs-10 goqual_company_text">
+                                GOQUAL은 이름에서 느껴지는 의미 그대로
+                            <span class="goqual_color">높은 Quality를 추구하고, 항상 더 좋은 Quality를 향해 나아간다</span>는 뜻입니다.
+                            더 나은 제품으로, 보다 질 높은 삶을 만들도록 노력하겠습니다.
+                            그리고 항상 고객의 마음을 이해하며, 의견을 듣고 더 발전하는 기업이 되겠습니다.
+                            </div>
+                        }
+
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_1_2.png" />
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-10 mb-10 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_arrow.png" />
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_1_3.png" />
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-10 mb-10 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_arrow.png" />
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_1_4.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 mt-20 pt-20 pt-sm-0 animate-init align-center" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        <div class="section-heading mb-20 mb-xxs-10 goqual_company_text">
+                            @if (Model.Lang == 0)
+                            {
+                                @:개인의 성장, 기업의 성장 그리고 더 나은 인간의 삶을 위하여
+                            }
+                            else
+                            {
+                                @:Growth of personal, Growth of Company Finally for the better life
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Business field -->
+<div class="fullwidth-slider owl-carousel">
+    <section class="page-section bg-scroll bg-light-alfa-90">
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_2_1.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pb-20 pt-sm-0 animate-init align-center" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        <h3 class="uppercase goqual_title">Business field</h3>
+                        <div class="section-heading mb-20 mb-xxs-10 goqual_company_text">
+                            @if(Model.Lang ==0)
+                            {
+                                @:우리의 삶을 좀 더 편리하고 안전하게 해줄 IoT 제품들 그리고 이를 위해 필요한 모든 Software
+                            }
+                            else
+                            {
+                                @:Products that make improve our life style. Software what people need to live
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_2_2.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- our team -->
+<div class="fullwidth-slider owl-carousel">
+    <section class="page-section bg-scroll bg-color-white">
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_3_1.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pb-20 pt-sm-0 animate-init align-center" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        <h3 class="uppercase goqual_title">Our team</h3>
+                        <div class="section-heading mb-20 mb-xxs-10 goqual_company_text">
+                            @if(Model.Lang == 0)
+                            {
+                                @:Quality 있는 사람들이 만드는, Quality 있는 기업 그 중심의 사람들
+                            }
+                            else
+                            {
+                                @:High quality people and high quality company. Introduce here.
+                            }
+                        </div>
+                    </div>
+                </div>
+                <section id="team" class="pt40 pb40">
+                    <div class="container">
+                        <div class="row">
+                            <section class="col-md-12">
+                                <div class="row mb15">
+                                    <div class="col-sm-3 nekoAnim-invisible nekoAnim-animated nekoAnim-fadeIn nekoAnim-visible" data-nekoanim="fadeIn" data-nekodelay="100" style="-webkit-animation: 100ms;">
+                                        <article>
+                                            <div>
+                                                <img src="~/Lib/GOQUAL/images/member/member_1.png" class="img-responsive goqual_member" />
+                                            </div>
+                                            <div class="boxContent text-center">
+                                                <h3 style="font-size: 17px;">
+                                                    @if(Model.Lang == 0)
+                                                    {
+                                                        @:우상범
+                                                    }
+                                                    else
+                                                    {
+                                                        @: Sang Buem, Woo
+                                                    }
+                                                </h3>
+                                                <p style="bottom: -50px;">CEO</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-3 nekoAnim-invisible nekoAnim-animated nekoAnim-fadeIn nekoAnim-visible" data-nekoanim="fadeIn" data-nekodelay="300" style="-webkit-animation: 300ms;">
+                                        <article>
+                                            <div>
+                                                <img src="~/Lib/GOQUAL/images/member/member_2.png" class="img-responsive goqual_member" />
+                                            </div>
+                                            <div class="boxContent text-center">
+                                                <h3 style="font-size: 17px;">
+                                                    @if(Model.Lang == 0)
+                                                    {
+                                                        @:최병일
+                                                    }
+                                                    else
+                                                    {
+                                                        @: Byung il, Choi
+                                                    }
+                                                </h3>
+                                                <p style="bottom: -50px;">R&D</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-3 nekoAnim-invisible nekoAnim-animated nekoAnim-fadeIn nekoAnim-visible" data-nekoanim="fadeIn" data-nekodelay="400" style="-webkit-animation: 400ms;">
+                                        <article>
+                                            <div>
+                                                <img src="~/Lib/GOQUAL/images/member/seungjun.PNG" class="img-responsive goqual_member" />
+                                            </div>
+                                            <div class="boxContent text-center">
+                                                <h3 style="font-size: 17px;">
+                                                    @if(Model.Lang == 0)
+                                                    {
+                                                        @:이승준
+                                                    }
+                                                    else
+                                                    {
+                                                        @:Seung Joon, Lee
+                                                    }
+                                                </h3>
+                                                <p style="bottom: -50px;">R&D</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-3 nekoAnim-invisible nekoAnim-animated nekoAnim-fadeIn nekoAnim-visible" data-nekoanim="fadeIn" data-nekodelay="200" style="-webkit-animation: 200ms;">
+                                        <article>
+                                            <div>
+                                                <img src="~/Lib/GOQUAL/images/member/dongjin.PNG" class="img-responsive goqual_member" />
+                                            </div>
+                                            <div class="boxContent text-center">
+                                                <h3 style="font-size: 17px;">
+                                                    @if(Model.Lang == 0)
+                                                    {
+                                                        @:김동진
+                                                    }
+                                                    else
+                                                    {
+                                                        @:Dong Jin, Kim
+                                                    }
+                                                </h3>
+                                                <p style="bottom: -50px;">R&D</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                    <div class="col-sm-3 nekoAnim-invisible nekoAnim-animated nekoAnim-fadeIn nekoAnim-visible" data-nekoanim="fadeIn" data-nekodelay="200" style="-webkit-animation: 200ms;">
+                                        <article>
+                                            <div>
+                                                <img src="~/Lib/GOQUAL/images/member/hyunggyu.jpg" class="img-responsive goqual_member" />
+                                            </div>
+                                            <div class="boxContent text-center">
+                                                <h3 style="font-size: 17px;">
+                                                    @if(Model.Lang == 0)
+                                                    {
+                                                        @:김형규
+                                                    }
+                                                    else
+                                                    {
+                                                        @:Bori
+                                                    }
+                                                </h3>
+                                                <p style="bottom: -50px;">MARKETING</p>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- history -->
+<div class="fullwidth-slider owl-carousel">
+    <section class="page-section bg-scroll bg-light-alfa-90">
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_4_1.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pb-20 pt-sm-0 animate-init align-center" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        <h3 class="uppercase goqual_title">History</h3>
+                        <div class="section-heading mb-20 mb-xxs-10 goqual_company_text">
+                            @if(Model.Lang == 0)
+                            {
+                                @:정직하게 한걸음씩 꾸준히, 어제 보다 더 나은 내일을
+                            }
+                            else
+                            {
+                                @:Step by step honestly<br /> better than yesterday
+                            }
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        @if (Model.Lang == 0)
+                        {
+                            <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_4_2.png" />
+                        }
+                        else
+                        {
+                            <img src="~/Lib/GOQUAL/images/company/mobile/eng/company_mobile_4_eng.png" />
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- prize -->
+<div class="fullwidth-slider owl-carousel">
+    <section class="page-section bg-scroll bg-color-white">
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_5_1.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pt-sm-0 animate-init align-center" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        <h3 class="uppercase goqual_title">Prize</h3>
+                        <div class="section-heading pb-20 mb-20 mb-xxs-10 goqual_company_text">
+                            @if(Model.Lang == 0)
+                            {
+                                @:한 걸음 더 도약, 성장 그리고 성장
+                            }
+                            else
+                            {
+                                @:Grow up and Fly up
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/eng/company_mobile_5_eng.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pt-sm-0 animate-init align-center" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        <h3 class="uppercase goqual_title">company activity</h3>
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-10 mb-10 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_5_3.png" />
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-10 mb-10 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_5_4.png" />
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-10 mb-10 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_5_5.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pt-sm-0 animate-init align-center" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        <h3 class="uppercase goqual_title">Certificate</h3>
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-10 mb-10 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_5_6.png" />
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-10 mb-10 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_5_7.png" />
+                    </div>
+                </div>
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-10 mb-10 align-center">
+                        <img src="~/Lib/GOQUAL/images/company/mobile/ko/company_mobile_5_8.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- scroll up -->
+<div class="bot-menu local-scroll">
+    <!-- Scroll Up -->
+    <a href="#top" class="bot-menu-item" data-anim-type="fade-in-left" data-anim-delay="0">
+        <span class="bot-menu-icon">
+            <i class="fa fa-arrow-circle-o-up"></i>
+        </span>
+        Scroll Up
+    </a>
+</div>

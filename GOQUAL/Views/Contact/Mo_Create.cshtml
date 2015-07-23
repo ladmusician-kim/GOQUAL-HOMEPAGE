@@ -1,0 +1,91 @@
+﻿@model GOQUAL.Views.Contact.IndexViewModel
+@{
+    Layout = "~/Views/Shared/_MobileLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/summernote/summernote.css" rel="stylesheet" />
+    <style type="text/css">
+        .btn {
+            padding: 5px 12px !important;
+        }
+
+        ul.dropdown-menu {
+            position: absolute !important;
+            box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            background-color: #fff !important;
+        }
+    </style>
+}
+@section Script {
+    <script src="~/Lib/GOQUAL/js/angular.js"></script>
+    <script src="~/Lib/GOQUAL/js/filters.js"></script>
+    <script src="~/Lib/GOQUAL/js/underscore-min.js"></script>
+    <script src="~/Lib/GOQUAL/js/flow.js"></script>
+    <script src="~/Lib/GOQUAL/js/fusty-flow.js"></script>
+    <script src="~/Lib/GOQUAL/js/fusty-flow-factory.js"></script>
+    <script src="~/Lib/GOQUAL/js/ng-flow.js"></script>
+    <script src="~/Lib/summernote/summernote.js"></script>
+    <script src="~/Lib/summernote/angular-summernote.js"></script>
+    <script src="~/Lib/GOQUAL/js/Contact/mo_create.js"></script>
+}
+
+@Html.HiddenFor(x => x.Lang)
+<nav class="main-nav js-stick stick-fixed">
+    <div class="full-wrapper relative clearfix">
+        <div class="nav-logo-wrap local-scroll">
+            <a href="#top" class="logo">
+                <img src="~/Lib/GOQUAL/images/ci/1.png" width="80" height="27" alt="" /></a>
+        </div>
+        <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+        <div class="inner-nav desktop-nav">
+            <ul class="clearlist scroll-nav local-scroll">
+                <li class="active"><a href="/Home/Mobile?lang=@(Model.Lang)">HOME</a></li>
+                <li><a href="/Company/Mobile?lang=@(Model.Lang)">COMPANY</a></li>
+                <li><a href="/Product/Mobile?lang=@(Model.Lang)">PRODUCT</a></li>
+                <li><a href="/Contact/Mobile?lang=@(Model.Lang)">CONTACT</a></li>
+                <li><a href="/Joinus/Mobile?lang=@(Model.Lang)">JOIN US</a></li>
+                <li><a href="/Info/Mobile?lang=@(Model.Lang)">NEWS</a></li>
+                <li>
+                    <a href="#" class="mn-has-sub">LANGUAGE <i class="fa fa-angle-down"></i></a>
+                    <ul class="mn-sub">
+                        <li><a href="/Contact/Mobile?lang=0">KOREA</a></li>
+                        <li><a href="/Contact/Mobile?lang=1">ENGLISH</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="advise_create_body" id="page">
+    <div ng-controller="AdviseCtrl" class="container mt-40">
+        <div class="row">
+            <div class="col-md-12">
+                <input class="form-control" ng-model="title" placeholder="제목을 적어주세요" />
+            </div>
+            <div class="col-md-12 mt-30">
+                <summernote
+                    config="options"
+                    ng-model="content"
+                    on-init="init()"
+                    on-enter="enter()"
+                    on-focus="focus(evt)"
+                    on-blur="blur(evt)"
+                    on-paste="paste()"
+                    on-keyup="keyup(evt)"
+                    on-keydown="keydown(evt)"
+                    on-image-upload="imageUpload(files, editor, welEditable);"></summernote>
+
+
+            </div>
+            <div class="col-md-12 mt-30 mb-30">
+                <input class="form-control" ng-model="password" placeholder="비밀번호" />
+            </div>
+            <ul class="pager">
+                <li><a href="/Contact/Mobile?lang=@(Model.Lang)" style="color: #414141">뒤로가기</a></li>
+                <li><a ng-click="createAdvise()" style="color: #414141">저장하기</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+

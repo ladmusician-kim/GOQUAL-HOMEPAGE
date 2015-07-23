@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BlueSwitchDBStoreContainer" CdmEntityContainer="GoqualEntities">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="BlueSwitchDB.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="issubcategory" ColumnName="issubcategory" />
+          <ScalarProperty Name="isdeprecated" ColumnName="isdeprecated" />
+          <ScalarProperty Name="updated" ColumnName="updated" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GoqualUsers">
+      <EntityTypeMapping TypeName="BlueSwitchDB.GoqualUser">
+        <MappingFragment StoreEntitySet="GoqualUser">
+          <ScalarProperty Name="isdeprecated" ColumnName="isdeprecated" />
+          <ScalarProperty Name="logined" ColumnName="logined" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BlueSwitchDB.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="isdeprecated" ColumnName="isdeprecated" />
+          <ScalarProperty Name="logined" ColumnName="logined" />
+          <ScalarProperty Name="created" ColumnName="created" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="C_id" ColumnName="_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

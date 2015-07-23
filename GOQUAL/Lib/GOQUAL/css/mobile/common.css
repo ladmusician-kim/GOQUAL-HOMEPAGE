@@ -1,0 +1,18 @@
+/* tab */
+.mobile-on .desktop-nav ul {
+    background: #fff !important;
+}
+.mobile-on .desktop-nav ul li a:hover, .mobile-on .desktop-nav ul li a.active {
+    color: black;
+    font-weight: bold;
+}
+
+.mn-sub li a:hover,
+.mn-sub li a.active{
+	background: rgba(255,255,255, .04);
+	color: black !important;
+}
+
+.goqual_color {
+    color: #409AE1 !important;
+}

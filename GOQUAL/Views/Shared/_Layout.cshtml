@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html ng-app="myApp">
+<!--<![endif]-->
+<head>
+    <!-- Basic Page Needs
+	================================================== -->
+    <meta charset="utf-8">
+    <title>GOQUAL</title>
+    <meta name="description" content="GOQUAL, 주식회사 고퀄, 고퀄, 홈네트워크">
+    <meta name="author" content="GOQUAL">
+    <!-- Mobile Specific Metas
+	================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- CSS
+	================================================== -->
+    <!-- Bootstrap  -->
+    <link type="text/css" rel="stylesheet" href="/Lib/bootstrap/css/bootstrap.min.css">
+    <!-- web font  -->
+    <!-- plugin css  -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/Lib/js-plugin/animation-framework/animate.css" />
+    <!-- Pop up-->
+    <link rel="stylesheet" type="text/css" href="/Lib/js-plugin/magnific-popup/magnific-popup.css" />
+    <!-- Owl carousel-->
+    <link rel="stylesheet" href="/Lib/js-plugin/owl.carousel/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="/Lib/js-plugin/owl.carousel/owl-carousel/owl.transitions.css">
+    <link rel="stylesheet" href="/Lib/js-plugin/owl.carousel/owl-carousel/owl.theme.css">
+    <!-- icon fonts -->
+    <link type="text/css" rel="stylesheet" href="/Lib/font-icons/custom-icons/css/custom-icons.css">
+    <!-- Custom css -->
+    <link type="text/css" rel="stylesheet" href="/Lib/css/layout.css">
+    <link type="text/css" id="colors" rel="stylesheet" href="/Lib/css/colors.css">
+    <link type="text/css" rel="stylesheet" href="/Lib/css/custom.css">
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+    <script src="/Lib/js/modernizr-2.6.1.min.js"></script>
+    <!-- Favicons
+	================================================== -->
+    <link rel="shortcut icon" href="~/Lib/GOQUAL/images/ci/logo.png">
+    <link rel="apple-touch-icon" href="/Lib/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/Lib/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/Lib/images/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/Lib/images/apple-touch-icon-144x144.png">
+
+    <link href="~/Lib/GOQUAL/css/common.css" rel="stylesheet" />
+    @RenderSection("Style", false)
+</head>
+<body>
+    <!-- Primary Page Layout 
+	================================================== -->
+    <!-- globalWrapper -->
+    <div id="globalWrapper">
+
+        @RenderBody()
+
+        <!-- footer -->
+         <footer id="footerWrapper" class="footer2">
+            <section id="footerRights">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="socialNetwork">
+                                <li>
+                                    <a class="tips fb-like"
+                                        title="follow me on Facebook"
+                                        onclick="window.open('http://facebook.com/goqual');">
+                                        <i class="icon-facebook-1 iconRounded"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12">
+                            <p>
+                                ⓒ 2014 GOQUAL.Inc. All rights reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+    <!-- global wrapper -->
+    <!-- End Document 
+	================================================== -->
+    <script type="text/javascript" src="/Lib/js-plugin/respond/respond.min.js"></script>
+    <script type="text/javascript" src="/Lib/js-plugin/jquery/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/Lib/js-plugin/jquery-ui/jquery-ui-1.8.23.custom.min.js"></script>
+    <!-- third party plugins  -->
+    <script type="text/javascript" src="/Lib/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/Lib/js-plugin/easing/jquery.easing.1.3.js"></script>
+    <!-- carousel -->
+    <script type="text/javascript" src="/Lib/js-plugin/owl.carousel/owl-carousel/owl.carousel.min.js"></script>
+    <!-- pop up -->
+    <script type="text/javascript" src="/Lib/js-plugin/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Custom  -->
+    <script type="text/javascript" src="/Lib/js/custom.js"></script>
+
+    <!-- GOQUAL -->
+    <script src="~/Lib/GOQUAL/js/Common.js"></script>
+    <script src="~/Lib/GOQUAL/js/angular.js"></script>
+    <script src="~/Lib/GOQUAL/js/underscore-min.js"></script>
+    <script src="~/Lib/GOQUAL/js/filters.js"></script>
+    <script src="~/Lib/GOQUAL/js/ajaxBody.js"></script>
+
+    @RenderSection("Script", false)
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-54752476-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</body>
+</html>

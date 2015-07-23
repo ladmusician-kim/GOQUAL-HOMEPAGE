@@ -1,0 +1,105 @@
+
+.goqual_tab, .goqual_tab li {
+    width: 100% !important;
+    margin-top: 15px;
+}
+.goqual_company_text_color {
+    color: #414141 !important;
+}
+.contact-form input.ci-field {
+    color: #414141 !important;
+    border-bottom: 1px solid #414141 !important;
+}
+.contact-form textarea.ci-area {
+    color: #414141 !important;
+    border: 1px solid #414141 !important;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #414141 !important;
+}
+.goqual_table th, td {
+    text-align: center;
+}
+.goqual_table_button {
+    height: 44px;
+    line-height: 44px;
+    width: 47px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+.goqual_table_button_eng {
+    height: 44px;
+    line-height: 44px;
+    width: 63px;
+    font-size: 13px;
+    vertical-align: middle;
+}
+.goqual_table_password {
+    height: 44px !important;
+}
+
+.goqual_table_link {
+    color: #adadad !important;
+}
+.goqual_table_link:hover {
+    cursor: pointer !important;
+}
+.pager li > a, .pager li > span {
+    border: 1px solid #414141 !important;
+    color: #414141 !important;
+}
+.tpl-minimal-tabs > li > a {
+    border-color: #c1c1c1;
+}
+.tpl-minimal-tabs li.active a, .tpl-minimal-tabs li.active a {
+    background: #222 !important;
+    color: white !important;
+}
+.goqual_tab_content_title {
+    text-align: center;
+    font-size: 20px;
+}
+
+
+article.post{margin-bottom: 22px;}
+.post h2 a:hover{text-decoration:none;}
+
+ul.entry-meta li a{
+    padding:4px 10px 4px 5px; 
+    border-radius: 4px; 
+    text-decoration: none;
+    color: #414141 !important;
+    cursor: pointer;
+}
+
+.formatIcon {padding:11px 0; border-top:1px solid #fff;}
+.formatIcon i {font-size: 22px;}
+
+ul.entry-meta {margin:0; padding:0;font-size:11px;}
+ul.entry-meta li {
+    display:inline-block; 
+    margin-bottom:11px;
+    font-size: 15px;
+    margin-right: 12px;
+}
+
+.widget {margin-bottom:22px;padding-bottom:22px;}
+.tagCloud a:link, .tagCloud a:visited {
+	text-decoration: none;
+	text-transform: uppercase;
+	display: inline-block;
+	margin: 0 3px 14px 0;
+	padding: 7px;
+	border-radius: 2px;
+	line-height: 1em;
+
+}
+
+body {
+    font-family: 'Roboto',sans-serif !important;
+    color: #777;
+}
+.goqual_comment {
+    height: 35px;
+    border: 2px solid #151515;
+}

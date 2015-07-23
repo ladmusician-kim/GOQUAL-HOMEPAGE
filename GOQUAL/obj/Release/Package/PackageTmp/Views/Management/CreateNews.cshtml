@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/summernote/summernote.css" rel="stylesheet" />
+}
+@section Script {
+    <script src="~/Lib/GOQUAL/js/angular.js"></script>
+    <script src="~/Lib/GOQUAL/js/filters.js"></script>
+    <script src="~/Lib/GOQUAL/js/underscore-min.js"></script>
+    <script src="~/Lib/GOQUAL/js/ajaxBody.js"></script>
+    <script src="~/Lib/GOQUAL/js/ng-table.js"></script>
+    <script src="~/Lib/GOQUAL/js/ngTableResetPage.js"></script>
+    <script src="~/Lib/GOQUAL/js/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="~/Lib/GOQUAL/js/flow.js"></script>
+    <script src="~/Lib/GOQUAL/js/fusty-flow.js"></script>
+    <script src="~/Lib/GOQUAL/js/fusty-flow-factory.js"></script>
+    <script src="~/Lib/GOQUAL/js/ng-flow.js"></script>
+    <script src="~/Lib/summernote/summernote.js"></script>
+    <script src="~/Lib/summernote/angular-summernote.js"></script>
+    <script src="~/Lib/GOQUAL/js/jquery.toastmessage.js"></script>
+    <script src="~/Lib/GOQUAL/js/toastBody.js"></script>
+    <script src="~/Lib/GOQUAL/js/management/news/create.js"></script>
+}
+<div class="goqual_management_container" ng-controller="NewsCtrl">
+    <!-- Navigation panel -->
+    <nav class="main-nav js-stick stick-fixed">
+        <div class="full-wrapper relative clearfix">
+            <div class="nav-logo-wrap local-scroll">
+                <a href="/Management/Index" class="logo">
+                    <img src="~/Lib/GOQUAL/images/ci/1.png" width="80" height="27" alt="" />
+                </a>
+            </div>
+            <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+            <div class="inner-nav desktop-nav">
+                <ul class="clearlist scroll-nav local-scroll">
+                    <li><a href="/Management/Index">홈</a></li>
+                    <li><a href="/Management/News">뉴스</a></li>
+                    <li><a href="/Management/Blog">블로그</a></li>
+                    <li><a href="/Management/Advise">조언</a></li>
+                    <li><a href="/Management/User">회원관리</a></li>
+                    <li><a href="/Management/User">점심</a></li>
+                    <li><a href="/Account/Logout">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Section -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb-20">
+                    <input class="form-control" ng-model="title" placeholder="제목을 적어주세요" />
+                </div>
+                <div class="col-md-12 mt30">
+                    <summernote
+                        config="options"
+                        ng-model="content"
+                        on-init="init()"
+                        on-enter="enter()"
+                        on-focus="focus(evt)"
+                        on-blur="blur(evt)"
+                        on-paste="paste()"
+                        on-keyup="keyup(evt)"
+                        on-keydown="keydown(evt)"
+                        on-image-upload="imageUpload(files, editor, welEditable);"></summernote>
+
+                    <ul class="pager">
+                        <li><a href="/Management/News">뒤로가기</a></li>
+                        <li><a ng-click="createNews()">저장하기</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

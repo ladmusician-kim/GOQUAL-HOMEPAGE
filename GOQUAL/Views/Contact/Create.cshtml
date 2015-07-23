@@ -1,0 +1,126 @@
+﻿@model GOQUAL.Views.Contact.IndexViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/summernote/summernote.css" rel="stylesheet" />
+    <style type="text/css">
+        .btn {
+            padding: 5px 12px !important;
+        }
+
+        ul.dropdown-menu {
+            position: absolute !important;
+            box-shadow: 0 6px 12px rgba(0,0,0,.175);
+            background-color: #fff !important;
+        }
+    </style>
+}
+@section Script {
+    <script src="~/Lib/GOQUAL/js/flow.js"></script>
+    <script src="~/Lib/GOQUAL/js/fusty-flow.js"></script>
+    <script src="~/Lib/GOQUAL/js/fusty-flow-factory.js"></script>
+    <script src="~/Lib/GOQUAL/js/ng-flow.js"></script>
+    <script src="~/Lib/summernote/summernote.js"></script>
+    <script src="~/Lib/summernote/angular-summernote.js"></script>
+    <script src="~/Lib/GOQUAL/js/jquery.toastmessage.js"></script>
+    <script src="~/Lib/GOQUAL/js/toastBody.js"></script>
+    <script src="~/Lib/GOQUAL/js/Contact/create.js"></script>
+}
+
+@Html.HiddenFor(x => x.Lang)
+<header class="navbar-fixed-top">
+    <!-- header -->
+    <div id="mainHeader" role="banner">
+        <div class="container">
+            <nav class="navbar navbar-default scrollMenu" role="navigation">
+                <div class="navbar-header">
+                    <!-- responsive navigation -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="navbar-toggle">
+                        <a href="/Home/Korea" class="goqual_lang_ko" style="font-size: 13px;">한국어</a>
+                        |
+                        <a href="/Home/English" class="goqual_lang_eng" style="font-size: 13px;">ENGLISH</a>
+                    </div>
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="/Home/Index?lang=@(Model.Lang)">
+                        <img class="goqual_menu_header" src="~/Lib/GOQUAL/images/ci/1.png" alt="GOQUAL 고퀄 주식회사" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="language_menu_dropdown nav navbar-nav pull-right goqual_lang_menu">
+                        <li class="primary goqual_lang_ko">
+                            <a ng-click="changeLang_ko()" class="firstLevel">한국어</a>
+                        </li>
+                        <li class="sep"></li>
+                        <li class="primary goqual_lang_eng">
+                            <a ng-click="changeLang_eng()" class="firstLevel">ENGLISH</a>
+                        </li>
+                    </ul>
+                    <!-- Main navigation -->
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="primary">
+                            <a href="/Home/Index?lang=@(Model.Lang)" class="firstLevel">HOME</a>
+                        </li>
+                        <li class="sep"></li>
+                        <li class="primary">
+                            <a href="/Company/Index?lang=@(Model.Lang)" class="firstLevel">COMPANY</a>
+                        </li>
+                        <li class="sep"></li>
+                        <li class="primary">
+                            <a href="/Product/Index?lang=@(Model.Lang)" class="firstLevel">PRODUCT</a>
+                        </li>
+                        <li class="sep"></li>
+                        <li class="primary">
+                            <a href="/Contact/Index?lang=@(Model.Lang)" class="firstLevel">CONTACT</a>
+                        </li>
+                        <li class="sep"></li>
+                        <li class="primary">
+                            <a href="/Joinus/Index?lang=@(Model.Lang)" class="firstLevel">JOIN US</a>
+                        </li>
+                        <li class="sep"></li>
+                        <li class="primary">
+                            <a href="/Info/Index?lang=@(Model.Lang)" class="firstLevel">NEWS</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="advise_create_body" id="page">
+    <div ng-controller="AdviseCtrl" class="container mt40">
+        <div class="row">
+            <div class="col-md-12">
+                <input class="form-control" ng-model="title" placeholder="제목을 적어주세요" />
+            </div>
+            <div class="col-md-12 mt30">
+                <summernote
+                    config="options"
+                    ng-model="content"
+                    on-init="init()"
+                    on-enter="enter()"
+                    on-focus="focus(evt)"
+                    on-blur="blur(evt)"
+                    on-paste="paste()"
+                    on-keyup="keyup(evt)"
+                    on-keydown="keydown(evt)"
+                    on-image-upload="imageUpload(files, editor, welEditable);"></summernote>
+            </div>
+            <div class="col-md-12 mt30 mb30">
+                <input class="form-control" ng-model="password" placeholder="비밀번호" />
+            </div>
+            <ul class="pager">
+                <li><a href="/Contact/Index?lang=@(Model.Lang)">뒤로가기</a></li>
+                <li><a ng-click="createAdvise()">저장하기</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+

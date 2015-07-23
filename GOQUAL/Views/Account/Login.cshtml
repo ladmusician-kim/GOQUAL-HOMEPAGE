@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+@section Style {
+
+}
+<section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+    <a class="nav-brand">GOQUAL</a>
+    <div class="row m-n">
+        <div class="col-md-4 col-md-offset-4 m-t-lg">
+            <section class="panel">
+                <header class="panel-heading text-center">
+                    로그인
+                </header>
+                @using (Html.BeginForm("Login", "Account", new { }, FormMethod.Post, new { @class = "panel-body" }))
+                {
+                    <div class="form-group">
+                        <label class="control-label">Username</label>
+                        <input type="text" placeholder="상범천재" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
+                        <input type="password" id="inputPassword" placeholder="해인천재" class="form-control">
+                    </div>
+                    <div class="line line-dashed"></div>
+                    <input type="submit" class="btn btn-facebook btn-block m-b-sm" value="LOGIN" />
+                }
+            </section>
+        </div>
+    </div>
+</section>

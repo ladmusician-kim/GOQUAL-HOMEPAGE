@@ -1,0 +1,274 @@
+﻿@model GOQUAL.Views.Product.IndexViewModel
+@{
+    Layout = "~/Views/Shared/_MobileLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/GOQUAL/css/mobile/product.css" rel="stylesheet" />
+}
+
+<!-- Navigation panel -->
+<nav class="main-nav js-stick stick-fixed">
+    <div class="full-wrapper relative clearfix">
+        <div class="nav-logo-wrap local-scroll">
+            <a href="#top" class="logo">
+                <img src="~/Lib/GOQUAL/images/ci/1.png" width="80" height="27" alt="" />
+            </a>
+        </div>
+        <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+        <div class="inner-nav desktop-nav">
+            <ul class="clearlist scroll-nav local-scroll">
+                <li class="active"><a href="/Home/Mobile?lang=@(Model.Lang)">HOME</a></li>
+                <li><a href="/Company/Mobile?lang=@(Model.Lang)">COMPANY</a></li>
+                <li><a href="/Product/Mobile?lang=@(Model.Lang)">PRODUCT</a></li>
+                <li><a href="/Contact/Mobile?lang=@(Model.Lang)">CONTACT</a></li>
+                <li><a href="/Joinus/Mobile?lang=@(Model.Lang)">JOIN US</a></li>
+                <li><a href="/Info/Mobile?lang=@(Model.Lang)">NEWS</a></li>
+                <!-- Item With Sub -->
+                <li>
+                    <a href="#" class="mn-has-sub">LANGUAGE <i class="fa fa-angle-down"></i></a>
+                    <ul class="mn-sub">
+                        <li><a href="/Product/Mobile?lang=0">KOREA</a></li>
+                        <li><a href="/Product/Mobile?lang=1">ENGLISH</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- 1 -->
+<div class="fullwidth-slider owl-carousel">
+    <section class="page-section bg-scroll bg-color-white">
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/product/mobile/product_mobile_1.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pt-sm-0 animate-init" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        @if (Model.Lang == 1)
+                        {
+                            <h3><span class="goqual_color">B</span>lueswitch</h3>
+                            <h3>Brighten world again</h3>
+                            <div class="section-heading align-left mb-20 mb-xxs-10 goqual_company_text">
+                                In 1880 Thomas Edison invented the light bulb.
+                                Since then, we can't imagine our life without light.
+                                Thanks to the switch se have learned how to control light easily.
+                                But since those 100 years the light switch hasn't been changed at all.
+                                So, today we have developed for you smart and innovative switch.
+                                It will make your world brighter.
+                            </div>
+                        }
+                        else
+                        {
+                            <h3><span class="goqual_color">B</span>lueswitch</h3>
+                            <h3>새롭게 세상을 밝힌다.</h3>
+                            <div class="section-heading align-left mb-20 mb-xxs-10 goqual_company_text">
+                                1880년 에디슨이 전구를 발명함으로써 인간은 언제든 빛을 가질 수 있었습니다.
+                                그 빛을 쉽게 켜고 끄는 스위치도 함께 발명되었죠.
+                                하지만 100년이 넘는 시간동안 스위치는 처음과 별반 다를게 없습니다.
+                                우리는 오늘 새롭게 세상을 밝히게 될 멋진 스위치를 개발하였습니다.
+                                더 밝은 세상, 더 나은 세상을 위하여.
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- 2 -->
+<div class="fullwidth-slider owl-carousel">
+    <section class="page-section bg-scroll bg-light-alfa-90">
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-7 animate-init goqual_product_non_padding_img" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/product/mobile/product_mobile_2.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pb-20 pt-sm-0 animate-init" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        @if (Model.Lang == 0)
+                        {
+                            <h3>더 나은 삶, 더 훌륭한 제품</h3>
+                            <div class="section-heading align-left mb-20 mb-xxs-10 goqual_company_text">
+                                우리는 더 나은 제품들이 더 나은 삶을 만들어 줄거라 믿어 의심치 않습니다.
+                                기존의 제품보다 더 향상된, 진보된, 그리고 사용하기 더 쉬운 제품을 만들기 위해 노력했습니다.
+                                기술이 인간의 삶을 윤택하게 할 수 있지만 그 이전에 반드시 사람을 이해한 제품이라는
+                                전제가 깔려야 한다고 생각했습니다.
+                                단순히 불을 켜고 끄기만 했던 스위치에서도 말이죠.
+                            </div>
+                        }
+                        else
+                        {
+                            <h3>Brighten world again</h3>
+                            <div class="section-heading align-left mb-20 mb-xxs-10 goqual_company_text">
+                                Technology can make people's life happier. But it also has to understand perople.
+                                We know about this, so we put a lot of effort into making exceptional products.
+                                more advanced and more user-friendly.
+                                It means our switch can control light easily.
+                                Even in simple switch that work turned on and off the light.
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- 3 -->
+<div class="fullwidth-slider owl-carousel">
+    <section class="page-section bg-scroll bg-color-white">
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/product/mobile/product_mobile_3.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pt-sm-0 animate-init" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        <h3>UX</h3>
+                        @if (Model.Lang == 1)
+                        {
+                            <h3>From your experience</h3>
+                            <div class="section-heading align-left mb-20 mb-xxs-10 goqual_company_text">
+                                We paid special attention to observing common behaviour patterns
+                                which application people use, when they wake up or go to sleep.
+                                In the morning, some of them keep switching off the alarm, so they are sometimes late.
+                                At night, some of them are scared of darkness and they sleep with the light turned on.
+                                We came up with an idea for those spontaneous actions.
+                                We proposed functions which make your life better.
+                            </div>
+                        }
+                        else
+                        {
+                            <h3>당신의 경험으로부터.</h3>
+                            <div class="section-heading align-left mb-20 mb-xxs-10 goqual_company_text">
+                                우리는 여루분들의 행동패턴을 관찰했습니다.
+                                어떤 앱을 사용하고, 몇시에 일어나고, 몇시에 잠이 드는지와 같은 것들이요.
+                                아침에 알람을 계속 끄다가 지각도 하고, 밤에는
+                                무서워서 불을 켜놓고 잠들기도 하더군요.
+                                그런한 당신의 사소한 행동들에서 우리는 아이디어를 얻었습니다.
+                                바로 당신의 삶을 훌륭하게 만들어줄 기능들이죠.
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- 4 -->
+<div class="fullwidth-slider owl-carousel">
+    <section class="page-section bg-scroll bg-light-alfa-90">
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-7 animate-init goqual_product_non_padding_img" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/product/mobile/product_mobile_4.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pb-20 pt-sm-0 animate-init" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text">
+                        <h3>Better Life, Better Product</h3>
+                        @if (Model.Lang == 0)
+                        {
+                            <h3>더 나은 삶, 더 훌륭한 제품</h3>
+                            <div class="section-heading align-left mb-20 mb-xxs-10 goqual_company_text">
+                                우리는 더 나은 제품들이 더 나은 삶을 만들어 줄거라 믿어 의심치 않습니다.
+                                기존의 제품보다 더 향상된, 진보된, 그리고 사용하기 더 쉬운 제품을 만들기 위해 노력했습니다.
+                                기술이 인간의 삶을 윤택하게 할 수 있지만 그 이전에 반드시 사람을 이해한 제품이라는
+                                전제가 깔려야 한다고 생각했습니다.
+                                단순히 불을 켜고 끄기만 했던 스위치에서도 말이죠.
+                            </div>
+                        }
+                        else
+                        {
+                            <h3>For a brighter world</h3>
+                            <div class="section-heading align-left mb-20 mb-xxs-10 goqual_company_text">
+                                Technology can make people's life happier. But it also has to understand people.
+                                We know about this, so we put a lot of effort into making exceptional products,
+                                more advanced and more user-friendly.
+                                It means our switch can control light easily.
+                                Even in simple switch that work only turned on and off the light.
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- 5 -->
+<div class="fullwidth-slider owl-carousel">
+    <section class="page-section bg-scroll bg-color-white">
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-7 animate-init" data-anim-type="fade-in-right-big" data-anim-delay="100">
+                    <!-- Image -->
+                    <div class="work-full-media mt-0 align-center">
+                        <img src="~/Lib/GOQUAL/images/product/mobile/product_mobile_5.png" />
+                    </div>
+                </div>
+                <div class="col-md-5 col-lg-4 col-lg-offset-1 pt-20 pt-sm-0 animate-init" data-anim-type="fade-in-left-big" data-anim-delay="100">
+                    <!-- About Project -->
+                    <div class="text align-center">
+                        @if (Model.Lang == 1)
+                        {
+                            <h3>Gorgeous</h3>
+                            <h3>Gentle and sophisticated, but still harmonious</h3>
+                            <div class="section-heading align-center mb-20 mb-xxs-10 goqual_company_text">
+                                We all have different style of houses.
+                                Different color and texture of wallpaper, the house's location, products we use at home.
+                                That's why you can use Blueswitch easily and naturally in any location with any products.
+                                But we don't forget about style.
+                                Even though it's a simple designed switch, it can impact on overall atmosphere.
+                                It will make your home more sophisticated.
+                            </div>
+                        }
+                        else
+                        {
+                            <h3>Intention</h3>
+                            <h3 style="font-size: 21px;">부드럽고 세련되지만, 조화롭게</h3>
+                            <div class="section-heading align-center mb-20 mb-xxs-10 goqual_company_text">
+                                우리의 집은 모두가 다릅니다. 벽지의 색깔과 재질 그리고 배치된 위치와 주변의 제품들까지도 말이죠.
+                                Blueswitch는 어떠한 위치에 어떤 제품과 함께여도 자연스럽게, 부드럽게 녹아들죠.
+                                하지만 마지막까지 도도한 세련미는 절대로 놓치지 않았습니다. 작은 스위치의 디자인이지만 전체의 분위기에 큰 영향을 미칠 수 있음을 알기에.
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<!-- scroll up -->
+<div class="bot-menu local-scroll">
+    <!-- Scroll Up -->
+    <a href="#top" class="bot-menu-item" data-anim-type="fade-in-left" data-anim-delay="0">
+        <span class="bot-menu-icon">
+            <i class="fa fa-arrow-circle-o-up"></i>
+        </span>
+        Scroll Up
+    </a>
+</div>

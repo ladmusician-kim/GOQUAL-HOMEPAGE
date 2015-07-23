@@ -1,0 +1,84 @@
+.goqual_menu_header {
+    width: 130px;
+    margin-top: 11px;
+}
+
+.navbar-header {
+    padding-bottom: 7px;
+}
+
+.goqual_lang_ko {
+    font-size: 11px !important;
+    margin-left: 0px;
+}
+
+.goqual_lang_eng {
+    font-size: 11px !important;
+}
+
+.navbar-toggle {
+    background: #fff !important;
+    padding-right: 0px !important;
+    margin-right: 11px !important;
+}
+
+    .navbar-toggle:hover {
+        background: #fff !important;
+    }
+
+.goqual_slider_title {
+    color: black;
+    font-weight: bold;
+}
+
+.goqual_slider_1_background {
+    background-size: 136% !important;
+    background-position-x: 59% !important;
+    background-position-y: 51% !important;
+}
+
+.goqual_slider_2_background {
+    background-position-x: 2% !important;
+    background-size: 227%;
+    background-position-y: -13%;
+}
+
+/* 메인 슬라이드 navi*/
+.owl-page span {
+    background: #EAEAEA !important;
+}
+
+.owl-page.active span {
+    background: #0e2f64 !important;
+}
+
+/* border */
+.btn-mod.btn-border-goqual {
+    color: #0e2f64;
+    border: 2px solid #0e2f64;
+    background: transparent;
+}
+
+.btn-mod.btn-border-goqual:hover,
+.btn-mod.btn-border-goqual:focus {
+    color: #fff;
+    border-color: transparent;
+    background: #0e2f64;
+}
+
+.hs-line-10.transparent {
+    color: #0e2f64 !important;
+}
+
+/* 메인 슬라이드 프로덕트 텍스트 색상*/
+.sub-heading {
+    color: #202732 !important;
+    font-style: normal !important;
+    font-size: 13px;
+}
+.wide-heading {
+    color: #0e2f64 !important;
+}
+.big-icon-link:hover, .big-icon-link:hover .wide-heading {
+    font-size: 26px;
+}

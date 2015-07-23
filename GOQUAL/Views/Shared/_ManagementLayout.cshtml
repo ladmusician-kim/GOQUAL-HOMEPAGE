@@ -1,0 +1,87 @@
+﻿
+<!DOCTYPE html>
+<html lang="ko" ng-app="myApp">
+<head>
+    <meta charset="utf-8" />
+    <title>DANDI MANAGEMENT</title>
+    <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <link href="/Lib/Management/css/bootstrap.css" rel="stylesheet" />
+    <link href="/Lib/Management/css/animate.css" rel="stylesheet" />
+    <link href="/Lib/Management/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Lib/Management/css/font.css" rel="stylesheet" />
+    <link href="/Lib/Management/js/fullcalendar/fullcalendar.css" rel="stylesheet" />
+    <link href="/Lib/Management/js/datatables/datatables.css" rel="stylesheet" />
+    <link href="/Lib/Management/css/plugin.css" rel="stylesheet" />
+    <link href="/Lib/Management/css/app.css" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="js/ie/respond.min.js" cache="false"></script>
+      <script src="js/ie/html5.js" cache="false"></script>
+      <script src="js/ie/fix.js" cache="false"></script>
+    <![endif]-->
+    @RenderSection("Style", false)
+</head>
+<body>
+    <section class="hbox stretch">
+        <!-- .aside -->
+        <aside class="bg-dark aside-sm" id="nav">
+            <section class="vbox">
+                <header class="dker nav-bar">
+                    <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="#nav">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                    <a href="#" class="nav-brand" data-toggle="fullscreen">GOQUAL</a>
+                    <a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user">
+                        <i class="fa fa-comment-o"></i>
+                    </a>
+                </header>
+                <section>
+                    <nav class="nav-primary hidden-xs">
+                        <ul class="nav">
+                            <li class="dropdown-submenu">
+                                <a href="/Management/BlueSwitchHelp" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-flask"></i>
+                                    <span>BlueSwitch</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="/Management/DandiMarket2Seller">도움말</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Management/DandiMarket2Picture">버전</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </section>
+                <footer class="footer bg-gradient hidden-xs">
+                    <a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm">
+                        <i class="fa fa-bars"></i>
+                    </a>
+                </footer>
+            </section>
+        </aside>
+
+        @RenderBody()
+    </section>
+
+
+    <script src="/Lib/Management/js/jquery.min.js"></script>
+    <script src="/Lib/Management/js/bootstrap.js"></script>
+    <script src="/Lib/Management/js/app.js"></script>
+    <script src="/Lib/Management/js/app.data.js"></script>
+    <script src="/Lib/Management/js/fuelux/fuelux.js"></script>
+    <script src="/Lib/Management/js/libs/underscore-min.js"></script>
+    <script src="/Lib/Management/js/datatables/jquery.dataTables.min.js"></script>
+
+    <script src="~/Lib/GOQUAL/js/angular.js"></script>
+    <script src="~/Lib/GOQUAL/js/ajaxBody.js"></script>
+    <script src="~/Lib/GOQUAL/js/filters.js"></script>
+    <script src="~/Lib/GOQUAL/js/ng-table.js"></script>
+    <script src="~/Lib/GOQUAL/js/ngTableResetPage.js"></script>
+
+    @RenderSection("Script", false)
+</body>
+</html>

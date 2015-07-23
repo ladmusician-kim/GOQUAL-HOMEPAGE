@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+@section Script {
+    <script src="~/Lib/GOQUAL/js/angular.js"></script>
+    <script src="~/Lib/GOQUAL/js/filters.js"></script>
+    <script src="~/Lib/GOQUAL/js/underscore-min.js"></script>
+    <script src="~/Lib/GOQUAL/js/ajaxBody.js"></script>
+    <script src="~/Lib/GOQUAL/js/ng-table.js"></script>
+    <script src="~/Lib/GOQUAL/js/ngTableResetPage.js"></script>
+    <script src="~/Lib/GOQUAL/js/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="~/Lib/GOQUAL/js/management/news/index.js"></script>
+}
+<div class="goqual_management_container" ng-controller="NewsCtrl">
+    <!-- Navigation panel -->
+    <nav class="main-nav js-stick stick-fixed">
+        <div class="full-wrapper relative clearfix">
+            <div class="nav-logo-wrap local-scroll">
+                <a href="/Management/Index" class="logo">
+                    <img src="~/Lib/GOQUAL/images/ci/1.png" width="80" height="27" alt="" />
+                </a>
+            </div>
+            <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+            <div class="inner-nav desktop-nav">
+                <ul class="clearlist scroll-nav local-scroll">
+                    <li><a href="/Management/Index">홈</a></li>
+                    <li><a href="/Management/News">뉴스</a></li>
+                    <li><a href="/Management/Blog">블로그</a></li>
+                    <li><a href="/Management/Advise">조언</a></li>
+                    <li><a href="/Management/User">회원관리</a></li>
+                    <li><a href="/Management/User">점심</a></li>
+                    <li><a href="/Account/Logout">로그아웃</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Section -->
+    <section class="page-section">
+        <div class="container">
+            <div class="row">
+                <p class="goqual_tab_title">
+                   NEWS
+                </p>
+                <table ng-table="tableParams" class="table table-striped goqual_table">
+                    <tr ng-repeat="item in news.items">
+                        <td data-title="'번호'" sortable="'Id'" style="vertical-align: middle;">{{item.Id}}
+                        </td>
+                        <td data-title="'제목'" sortable="'Label'">
+                            <a href="/Management/DetailNews?id={{item.Id}}">{{item.Title}}</a>
+                        </td>
+                        <td data-title="'생성일'" sortable="'Address'">{{item.Created | shortdate}}
+                        </td>
+                    </tr>
+                </table>
+                <ul class="pager">
+                    <li><a href="/Management/CreateNews">글 작성</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>

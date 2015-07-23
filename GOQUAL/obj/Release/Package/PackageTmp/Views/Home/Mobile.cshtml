@@ -1,0 +1,134 @@
+﻿@model GOQUAL.Views.Home.IndexViewModel
+@{
+    Layout = "~/Views/Shared/_MobileLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/GOQUAL/css/mobile/home.css" rel="stylesheet" />
+}
+
+<!-- Navigation panel -->
+<nav class="main-nav js-stick stick-fixed">
+    <div class="full-wrapper relative clearfix">
+        <div class="nav-logo-wrap local-scroll">
+            <a href="#top" class="logo">
+                <img src="~/Lib/GOQUAL/images/ci/1.png" width="80" height="27" alt="" /></a>
+        </div>
+        <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+        <div class="inner-nav desktop-nav">
+            <ul class="clearlist scroll-nav local-scroll">
+                <li class="active"><a href="/Home/Mobile?lang=@(Model.Lang)">HOME</a></li>
+                <li><a href="/Company/Mobile?lang=@(Model.Lang)">COMPANY</a></li>
+                <li><a href="/Product/Mobile?lang=@(Model.Lang)">PRODUCT</a></li>
+                <li><a href="/Contact/Mobile?lang=@(Model.Lang)">CONTACT</a></li>
+                <li><a href="/Joinus/Mobile?lang=@(Model.Lang)">JOIN US</a></li>
+                <li><a href="/Info/Mobile?lang=@(Model.Lang)">NEWS</a></li>
+                <li>
+                    <a href="#" class="mn-has-sub">LANGUAGE <i class="fa fa-angle-down"></i></a>
+                    <ul class="mn-sub">
+                        <li><a href="/Home/Mobile?lang=0">KOREA</a></li>
+                        <li><a href="/Home/Mobile?lang=1">ENGLISH</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Fullwidth Slider -->
+<div class="home-section fullwidth-slider owl-carousel bg-white" id="home">
+    <!-- Company slide -->
+    <section class="home-section fixed-height-medium bg-scroll bg-cyan-alfa-50 goqual_slider_1_background"
+        data-background="/Lib/GOQUAL/images/ci/2.png">
+        <div class="js-height-parent">
+            <div class="home-content container">
+                <div class="home-text">
+                    <div class="row">
+                        <div class="col-sm-9 col-sm-offset-1">
+                            <div class="align-right animate-init" data-anim-type="fade-in-up" data-anim-delay="200">
+                                <div class="hs-line-1 uppercase  mb-10 goqual_slider_title">
+                                    GOQUAL
+                                </div>
+                                <div class="hs-line-7 uppercase mb-0">
+                                    Better Life
+                                </div>
+                                <div class="hs-line-10 transparent mb-40 mb-xs-20">
+                                    Growth of personal, Growth of Company
+                                </div>
+                                <div class="local-scroll">
+                                    <a href="/Company/Mobile?lang=@(Model.Lang)" class="btn btn-mod btn-border-goqual btn-circle btn-small ext-link">INTRODUCT</a>
+                                    <span class="hidden-xs">&nbsp;</span>
+                                    <a href="#news" class="btn btn-mod btn-border-goqual btn-circle btn-small">OUR STORY</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product slide -->
+    <section class="home-section fixed-height-medium bg-scroll bg-cyan-alfa-70 goqual_slider_2_background"
+        data-background="/Lib/GOQUAL/images/product/background/product_4_background.png">
+        <div class="js-height-parent">
+            <div class="home-content container">
+                <div class="home-text">
+                    <a href="http://vimeo.com/96747032" class="big-icon-link lightbox-gallery-1 mfp-iframe pt-40" style="padding-top: 107px;">
+                        <span class="wide-heading">Blue Switch</span>
+                    </a>
+                    <div class="sub-heading">
+                        Gentle and sophisticated, but still harmonious
+                    </div>
+                    <div class="local-scroll pt-20">
+                        <a href="/Product/Mobile?lang=@(Model.Lang)" class="btn btn-mod btn-border-goqual btn-circle btn-small ext-link">SEE MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Blog Section -->
+<section class="page-section" id="news">
+    <div class="relative">
+        <!-- Section Headings -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                    <div class="section-title">
+                        <img src="~/Lib/GOQUAL/images/home/home_typho.png" />
+                    </div>
+                    @if (Model.Lang == 0)
+                    {
+                        <h2 class="section-heading">
+                            BETTER LIFE를 통한 더 나은 세상.<br />
+                            QUALITY있는 세상을 만드는 기업 고퀄입니다.
+                        </h2>
+                    }
+                    <div class="section-line mb-60 mb-xxs-30"></div>
+                </div>
+            </div>
+        </div>
+        <!-- End Section Headings -->
+
+        <!-- Blog Posts Grid -->
+        <div class="last-posts-grid clearfix">
+            @foreach (var blog in Model.Blogs)
+            {
+                <a href="/Info/DetailBlog?id=@(blog.Id)&lang=@(Model.Lang)" class="lp-item animate-init" data-anim-type="fade-in" data-anim-delay="100">
+                    <div class="lp-image">
+                        <img alt="" src="/Info/GetBlogImage?id=@(blog.FirstBlogImage.Id)" class="img-responsive">
+                        @*<img src="~/Lib/DANDI/images/blog/post-prev-1.jpg" alt="" />*@
+                    </div>
+                    <div class="lp-descr">
+                        <h4 class="lp-title">@(blog.Title)</h4>
+                        <div class="lp-author">
+                            @(blog.Updated)
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+</section>
+<!--End  Blog Section -->

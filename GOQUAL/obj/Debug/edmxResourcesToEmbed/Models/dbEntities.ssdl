@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlueSwitchModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BlueSwitchModelStoreContainer">
+    <EntitySet Name="Category" EntityType="BlueSwitchModel.Store.Category" store:Type="Tables" Schema="BlueSwitch" />
+    <EntitySet Name="GoqualUser" EntityType="BlueSwitchModel.Store.GoqualUser" store:Type="Tables" Schema="BlueSwitch" />
+    <EntitySet Name="User" EntityType="BlueSwitchModel.Store.User" store:Type="Tables" Schema="BlueSwitch" />
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="updated" Type="datetime" />
+    <Property Name="isdeprecated" Type="bit" Nullable="false" />
+    <Property Name="issubcategory" Type="bit" />
+  </EntityType>
+  <EntityType Name="GoqualUser">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="logined" Type="datetime" />
+    <Property Name="isdeprecated" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="_id" />
+    </Key>
+    <Property Name="_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="password" Type="varchar" Nullable="false" MaxLength="45" />
+    <Property Name="created" Type="datetime" Nullable="false" />
+    <Property Name="logined" Type="datetime" />
+    <Property Name="isdeprecated" Type="bit" Nullable="false" />
+  </EntityType>
+</Schema>

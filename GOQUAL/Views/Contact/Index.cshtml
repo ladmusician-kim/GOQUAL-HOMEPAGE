@@ -1,0 +1,387 @@
+﻿@model GOQUAL.Views.Contact.IndexViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Script
+{
+    <script type="text/javascript">
+        try { document.execCommand('BackgroundImageCache', false, true); } catch (e) { }
+    </script>
+
+    @if (Request.Url.ToString() == "http://localhost:16622/Contact/Index?lang=0")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=d5336b68c0c928dca9e28f8235618f10"></script>
+    }
+    else if (Request.Url.ToString() == "http://localhost:16622/Contact/Index")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=d5336b68c0c928dca9e28f8235618f10"></script>
+    }
+    else if (Request.Url.ToString() == "http://localhost:16622/Contact/Index?lang=1")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=d5336b68c0c928dca9e28f8235618f10"></script>
+    }
+
+    else if (Request.Url.ToString() == "http://www.goqual.com/Contact/Index")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=1913e9638e6b1588bb2e79b1127cc8f9"></script>        
+    }
+    else if (Request.Url.ToString() == "http://www.goqual.com/Contact/Index?lang=0")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=1913e9638e6b1588bb2e79b1127cc8f9"></script>        
+    }
+    else if (Request.Url.ToString() == "http://www.goqual.com/Contact/Index?lang=1")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=1913e9638e6b1588bb2e79b1127cc8f9"></script>        
+    }
+
+    else if (Request.Url.ToString() == "http://goqual.com/Contact/Index")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=1913e9638e6b1588bb2e79b1127cc8f9"></script>        
+    }
+    else if (Request.Url.ToString() == "http://goqual.com/Contact/Index?lang=0")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=1913e9638e6b1588bb2e79b1127cc8f9"></script>        
+    }
+    else
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=1913e9638e6b1588bb2e79b1127cc8f9"></script>
+    }
+    <!-- ngTable -->
+    <script src="~/Lib/GOQUAL/js/ng-table.js"></script>
+    <script src="~/Lib/GOQUAL/js/ngTableResetPage.js"></script>
+    <script src="~/Lib/GOQUAL/js/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="~/Lib/GOQUAL/js/Contact/Index.js"></script>
+}
+@section Style {
+    <link href="~/Lib/GOQUAL/css/ng-table.css" rel="stylesheet" />
+}
+
+@Html.HiddenFor(x => x.Lang)
+<div ng-controller="ContactCtrl">
+    <header class="navbar-fixed-top">
+            <!-- header -->
+            <div id="mainHeader" role="banner">
+                <div class="container">
+                    <nav class="navbar navbar-default scrollMenu" role="navigation">
+                        <div class="navbar-header">
+                            <!-- responsive navigation -->
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="navbar-toggle">
+                                <a href="/Home/Korea" class="goqual_lang_ko" style="font-size: 13px;">한국어</a>
+                                |
+                        <a href="/Home/English" class="goqual_lang_eng" style="font-size: 13px;">ENGLISH</a>
+                            </div>
+                            <!-- Logo -->
+                            <a class="navbar-brand" href="/Home/Index?lang=@(Model.Lang)">
+                                <img class="goqual_menu_header" src="~/Lib/GOQUAL/images/ci/1.png" alt="GOQUAL 고퀄 주식회사" />
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="mainMenu">
+                            <ul class="language_menu_dropdown nav navbar-nav pull-right goqual_lang_menu">
+                                <li class="primary goqual_lang_ko">
+                                    <a ng-click="changeLang_ko()" class="firstLevel">한국어</a>
+                                </li>
+                                <li class="sep"></li>
+                                <li class="primary goqual_lang_eng">
+                                    <a ng-click="changeLang_eng()" class="firstLevel">ENGLISH</a>
+                                </li>
+                            </ul>
+                            <!-- Main navigation -->
+                            <ul class="nav navbar-nav pull-right">
+                                <li class="primary">
+                                    <a href="/Home/Index?lang=@(Model.Lang)" class="firstLevel">HOME</a>
+                                </li>
+                                <li class="sep"></li>
+                                <li class="primary">
+                                    <a href="/Company/Index?lang=@(Model.Lang)" class="firstLevel">COMPANY</a>
+                                </li>
+                                <li class="sep"></li>
+                                <li class="primary">
+                                    <a href="/Product/Index?lang=@(Model.Lang)" class="firstLevel">PRODUCT</a>
+                                </li>
+                                <li class="sep"></li>
+                                <li class="primary">
+                                    <a href="/Contact/Index?lang=@(Model.Lang)" class="firstLevel">CONTACT</a>
+                                </li>
+                                <li class="sep"></li>
+                                <li class="primary">
+                                    <a href="/Joinus/Index?lang=@(Model.Lang)" class="firstLevel">JOIN US</a>
+                                </li>
+                                <li class="sep"></li>
+                                <li class="primary">
+                                    <a href="/Info/Index?lang=@(Model.Lang)" class="firstLevel">NEWS</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+    <section id="page" class="tabsDetails goqual_container" data-nekoanim="fadeInUp" data-nekodelay="100">
+        <div class="container mt30">
+            <div class="row">
+                <!-- side menu -->
+                <div class="col-md-3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active">
+                            <a href="#company" data-toggle="tab">Company</a>
+                        </li>
+                        <li class="">
+                            <a href="#advise" data-toggle="tab">Advise</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Content -->
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <!-- company -->
+                        <div class="tab-pane fade in active" id="company">
+                            <div class="row">
+                                <div class="col-md-12 mapBox" id="makaluMap"></div>
+                                <div id="mail" class="col-md-12 container mt40 mb60">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <p style="font-size: 22px; font-weight: 300">Info</p>
+                                            @if (Model.Lang == 0)
+                                            {
+                                                <address>
+                                                    <p style="font-size: 17px;">
+                                                        <i class="icon-location"></i>&nbsp;&nbsp;&nbsp;대구광역시 동구<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;동대구로 475 대구테크노파크
+                                                        <br />
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12층 도담관
+                                                        <br>
+                                                        <i class="icon-phone"></i>&nbsp;&nbsp; 070.4738.3000
+                                                        <br>
+                                                        Fax &nbsp;0303.3444.2230
+                                                        <br />
+                                                        <i class="icon-mail-alt"></i>&nbsp;&nbsp;&nbsp;GQ@goqaul.com
+                                                    </p>
+                                                </address>
+                                            }
+                                            else
+                                            {
+                                                <address>
+                                                    <p style="font-size: 17px;">
+                                                        <i class="icon-location"></i>&nbsp;&nbsp;&nbsp;Daegu, Korea<br>
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;475, Dongdaegu-ro, Dong-gu
+                                                        <br />
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12th floor, dodamkwan
+                                                        <br>
+                                                        <i class="icon-phone"></i>&nbsp;&nbsp; 070.4738.3000
+                                                        <br>
+                                                        Fax &nbsp;0303.3444.2230
+                                                        <br />
+                                                        <i class="icon-mail-alt"></i>&nbsp;&nbsp;&nbsp;GQ@goqaul.com
+                                                    </p>
+                                                </address>
+                                                <address>
+                                                </address>
+                                            }
+
+                                        </div>
+                                        <form method="post" action="~/Lib/js-plugin/neko-contact-ajax-plugin/php/form-handler.php" id="contactfrm" role="form">
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="name">Name</label>
+                                                    @if (Model.Lang == 0)
+                                                    {
+                                                        <input type="text" class="form-control" name="name" id="name"
+                                                            ng-model="name"
+                                                            placeholder="이름을 입력해주세요."
+                                                            title="올바른 이름을 입력해주세요" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <input type="text" class="form-control" name="name" id="name"
+                                                            ng-model="name"
+                                                            placeholder="Please write your Name"
+                                                            title="Please write a valid your Name" />
+                                                    }
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    @if (Model.Lang == 0)
+                                                    {
+                                                        <input type="email" class="form-control" name="email" id="email"
+                                                            ng-model="email"
+                                                            placeholder="이메일을 적어주세요"
+                                                            title="올바른 이메일을 적어주세요" />
+                                                    }
+                                                    else
+                                                    {
+                                                        <input type="email" class="form-control" name="email" id="email"
+                                                            ng-model="email"
+                                                            placeholder="Please write your email"
+                                                            title="Please write a valid your email" />
+                                                    }
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="phone">Phone</label>
+                                                    @if (Model.Lang == 0)
+                                                    {
+                                                        <input name="phone" class="form-control required digits" type="tel" id="phone"
+                                                            ng-model="phone"
+                                                            size="30" value=""
+                                                            placeholder="전화번호를 입력해주세요"
+                                                            title="올바른 전화번호를 입력해주세요">
+                                                    }
+                                                    else
+                                                    {
+                                                        <input name="phone" class="form-control required digits" type="tel" id="phone"
+                                                            ng-model="phone"
+                                                            size="30" value=""
+                                                            placeholder="Please enter the phone number"
+                                                            title="Please enter a valid phone number">
+                                                    }
+
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label for="comments">Comments</label>
+                                                    @if (Model.Lang == 0)
+                                                    {
+                                                        <textarea name="comment" class="form-control" id="comments" cols="3" rows="5"
+                                                            ng-model="content"
+                                                            placeholder="메세지를 입력해주세요"
+                                                            title="적어도 10글자이상 적어주세요"></textarea>
+                                                    }
+                                                    else
+                                                    {
+                                                        <textarea name="comment" class="form-control" id="comments" cols="3" rows="5"
+                                                            ng-model="content"
+                                                            placeholder="Please enter a message"
+                                                            title="Please write at least 10 letters"></textarea>
+                                                    }
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-8 col-md-offset-4 mb30">
+                                                <div class="result"></div>
+                                                @if (Model.Lang == 0)
+                                                {
+                                                    <button name="submit" type="submit" class="btn btn-lg" id="submit" ng-click="sendMessage()">메일보내기</button>
+                                                }
+                                                else
+                                                {
+                                                    <button name="submit" type="submit" class="btn btn-lg" id="submit" ng-click="sendMessage()">Send Mail</button>
+                                                }
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- advise -->
+                        <div class="tab-pane fade" id="advise">
+                            <div class="row">
+                                <p class="goqual_tab_title">
+                                    @if (Model.Lang == 0)
+                                    {
+                                        @:GOQUAL은 여러분들의 쓴소리와 조언을 격하게 환영합니다
+                                }
+                                    else
+                                    {
+                                        @:Welcome to the your advise for GOQUAL
+                                }
+                                </p>
+                                <div class="goqual_tab_table_body">
+                                    @if (Model.Lang == 0)
+                                    {
+                                        <table ng-table="tableParams" class="table table-striped goqual_table">
+                                            <tr ng-repeat="item in advise.items">
+                                                <td data-title="'번호'" sortable="'Id'" style="vertical-align: middle;">
+                                                    <span ng-if="!item.$edit">{{item.Id}}</span>
+                                                    <div ng-if="item.$edit">
+                                                        비밀번호
+                                                    </div>
+                                                </td>
+                                                <td data-title="'제목'" sortable="'Label'">
+                                                    <span ng-if="!item.$edit">
+                                                        <a ng-click="item.$edit = true">{{item.Title}}</a>
+                                                    </span>
+                                                    <div ng-if="item.$edit">
+                                                        <input class="form-control" type="password" ng-model="item.password" />
+                                                    </div>
+                                                </td>
+                                                <td data-title="'생성일'" sortable="'Created'">
+                                                    <span ng-if="!item.$edit">{{item.Created | shortdate}}</span>
+                                                    <span ng-if="item.$edit">
+                                                        <a ng-if="item.$edit" style="float: right;" class="btn btn-default btn-xs goqual_table_button" ng-click="detailAdvise(item)">확인</a>
+                                                    </span>
+                                                </td>
+                                                <td data-title="'보기'">
+                                                    <a ng-if="!item.$edit" href="" class="btn btn-default btn-xs" ng-click="item.$edit = true">보기</a>
+                                                    <a ng-if="item.$edit" style="float: left;" class="btn btn-default btn-xs goqual_table_button" ng-click="item.$edit = false">취소</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    }
+                                    else
+                                    {
+                                        <table ng-table="tableParams" class="table table-striped goqual_table">
+                                            <tr ng-repeat="item in advise.items">
+                                                <td data-title="'Index'" sortable="'Id'" style="vertical-align: middle;">
+                                                    <span ng-if="!item.$edit">{{item.Id}}</span>
+                                                    <div ng-if="item.$edit">
+                                                        Password
+                                                    </div>
+                                                </td>
+                                                <td data-title="'Title'" sortable="'Label'">
+                                                    <span ng-if="!item.$edit">
+                                                        <a ng-click="item.$edit = true">{{item.Title}}</a>
+                                                    </span>
+                                                    <div ng-if="item.$edit">
+                                                        <input class="form-control" type="password" ng-model="item.password" />
+                                                    </div>
+                                                </td>
+                                                <td data-title="'Created'" sortable="'Created'">
+                                                    <span ng-if="!item.$edit">{{item.Created | shortdate}}</span>
+                                                    <span ng-if="item.$edit">
+                                                        <a ng-if="item.$edit" style="float: right;" class="btn btn-default btn-xs goqual_table_button_eng"
+                                                            ng-click="detailAdvise(item)">Confirm</a>
+                                                    </span>
+                                                </td>
+                                                <td data-title="'Detail'">
+                                                    <a ng-if="!item.$edit" href="" class="btn btn-default btn-xs" ng-click="item.$edit = true">Detail</a>
+                                                    <a ng-if="item.$edit" style="float: left;" class="btn btn-default btn-xs goqual_table_button_eng"
+                                                        ng-click="item.$edit = false">Cancel</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    }
+
+                                    <ul class="pager">
+                                        <li>
+                                            <a href="/Contact/Create?lang=@(Model.Lang)">
+                                                @if (Model.Lang == 0)
+                                                {
+                                                    @:글 작성
+                                                }
+                                                else
+                                                {
+                                                    @: Send Advise
+                                                }
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

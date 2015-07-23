@@ -1,0 +1,113 @@
+﻿@model GOQUAL.Views.Product.IndexViewModel
+@{
+    Layout = "~/Views/Shared/_ContentLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/GOQUAL/css/jquery.fullPage.css" rel="stylesheet" />
+}
+@section Script {
+    <script src="~/Lib/GOQUAL/js/jquery.slimscroll.min.js"></script>
+    <script src="~/Lib/GOQUAL/js/jquery.fullPage.js"></script>
+    <script src="~/Lib/GOQUAL/js/Product/Index.js"></script>
+}
+
+@Html.HiddenFor(x => x.Lang)
+<div ng-controller="ProductCtrl">
+    <header class="navbar-fixed-top">
+        <!-- header -->
+        <div id="mainHeader" role="banner">
+            <div class="container">
+                <nav class="navbar navbar-default scrollMenu" role="navigation">
+                    <div class="navbar-header">
+                        <!-- responsive navigation -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-toggle">
+                            <a href="/Home/Korea" class="goqual_lang_ko" style="font-size: 13px;">한국어</a>
+                            |
+                        <a href="/Home/English" class="goqual_lang_eng" style="font-size: 13px;">ENGLISH</a>
+                        </div>
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="/Home/Index?lang=@(Model.Lang)">
+                            <img class="goqual_menu_header" src="~/Lib/GOQUAL/images/ci/1.png" alt="GOQUAL 고퀄 주식회사" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="mainMenu">
+                        <ul class="language_menu_dropdown nav navbar-nav pull-right goqual_lang_menu">
+                            <li class="primary goqual_lang_ko">
+                                <a ng-click="changeLang_ko()" class="firstLevel">한국어</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary goqual_lang_eng">
+                                <a ng-click="changeLang_eng()" class="firstLevel">ENGLISH</a>
+                            </li>
+                        </ul>
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="primary">
+                                <a href="/Home/Index?lang=@(Model.Lang)" class="firstLevel">HOME</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary">
+                                <a href="/Company/Index?lang=@(Model.Lang)" class="firstLevel">COMPANY</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary">
+                                <a href="/Product/Index?lang=@(Model.Lang)" class="firstLevel">PRODUCT</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary">
+                                <a href="/Contact/Index?lang=@(Model.Lang)" class="firstLevel">CONTACT</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary">
+                                <a href="/Joinus/Index?lang=@(Model.Lang)" class="firstLevel">JOIN US</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary">
+                                <a href="/Info/Index?lang=@(Model.Lang)" class="firstLevel">NEWS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="tabsDetails goqual_container" data-nekoawnim="fadeInUp" data-nekodelay="100">
+        <div id="fullpage">
+            <div class="section align_center">
+                <div class="goqual_product_1_body img_container">
+                    <img class="goqual_product_1_text" src="~/Lib/GOQUAL/images/product/eng/product_1_text_eng.png" />
+                </div>
+            </div>
+            <div class="section align_center">
+                <div class="goqual_product_2_body img_container">
+                    <img class="goqual_product_2_text" 
+                        style="width: 40%"
+                        src="~/Lib/GOQUAL/images/product/eng/product_2_text_eng.png" />
+                </div>
+            </div>
+            <div class="section align_center">
+                <div class="goqual_product_3_body img_container">
+                    <img class="goqual_product_3_text" 
+                        style="right: 25%; bottom: 4%;"
+                        src="~/Lib/GOQUAL/images/product/eng/product_3_text_eng.png" />
+                </div>
+            </div>
+            <div class="section align_center">
+                <div class="goqual_product_4_body img_container">
+                    <img class="goqual_product_4_text" src="~/Lib/GOQUAL/images/product/eng/product_4_text_eng.png" />
+                </div>
+            </div>
+            <div class="section align_center">
+                <img class="goqual_product_5_body" src="~/Lib/GOQUAL/images/product/background/product_5_background.png" />
+                <img src="~/Lib/GOQUAL/images/product/eng/product_5_text_eng.png" style="position: relative; left: 1%;" />
+            </div>
+        </div>
+    </section>
+</div>

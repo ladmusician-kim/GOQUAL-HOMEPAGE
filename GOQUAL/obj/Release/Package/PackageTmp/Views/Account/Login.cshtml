@@ -1,0 +1,96 @@
+﻿@{
+    Layout = "~/Views/Shared/_ManagementLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/GOQUAL/css/account/common.css" rel="stylesheet" />
+}
+<div class="goqual_management_container">
+    @if (Request.IsAuthenticated)
+    {
+        <!-- Navigation panel -->
+        <nav class="main-nav js-stick stick-fixed">
+            <div class="full-wrapper relative clearfix">
+                <div class="nav-logo-wrap local-scroll">
+                    <a href="#top" class="logo">
+                        <img src="~/Lib/GOQUAL/images/ci/1.png" width="80" height="27" alt="" />
+                    </a>
+                </div>
+                <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+                <div class="inner-nav desktop-nav">
+                    <ul class="clearlist scroll-nav local-scroll">
+                        <li class="active">
+                            <a href="/Management/Logout">로그아웃</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Section -->
+        <section class="page-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                        <h3 class="small-title">소환사의 협곡에 오신것을 환영합니다<span class="st-point">.</span>
+                        </h3>
+                        <div class="section-line mb-60 mb-xxs-30"></div>
+                    </div>
+                </div>
+                <div class="row align-center">
+                    <div class="col-sm-4 mb-40 col-lg-offset-4">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+    else
+    {
+        <!-- Navigation panel -->
+        <nav class="main-nav js-stick stick-fixed">
+            <div class="full-wrapper relative clearfix">
+                <div class="nav-logo-wrap local-scroll">
+                    <a href="#top" class="logo">
+                        <img src="~/Lib/GOQUAL/images/ci/1.png" width="80" height="27" alt="" />
+                    </a>
+                </div>
+                <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+                <div class="inner-nav desktop-nav">
+                    <ul class="clearlist scroll-nav local-scroll">
+                        <li class="active"><a>회원가입</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Section -->
+        <section class="page-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+                        <h3 class="small-title">소환사의 협곡에 오신것을 환영합니다<span class="st-point">.</span>
+                        </h3>
+                        <div class="section-line mb-60 mb-xxs-30"></div>
+                    </div>
+                </div>
+                <div class="row align-center">
+                    <div class="col-sm-4 mb-40 col-lg-offset-4">
+                        @using (Html.BeginForm("Login", "Account", new { }, FormMethod.Post))
+                        {
+                            <div class="mb-20 mb-md-10">
+                                <!-- Name -->
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+                            </div>
+                            <div class="mb-20 mb-md-10">
+                                <!-- Password -->
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                            </div>
+                            <div class="mb-20 mb-md-10">
+                                <button class="btn btn-mod btn-border btn-medium" style="width: 49%">회원가입</button>
+                                <button type="submit" class="btn btn-mod btn-border btn-medium" style="width: 49%">로그인</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+</div>

@@ -1,0 +1,9 @@
+.form-control {
+    height: 50px !important;
+    border: 2px solid #414141 !important;
+}
+
+a {
+    cursor: pointer;
+    color: #414141 !important;
+}

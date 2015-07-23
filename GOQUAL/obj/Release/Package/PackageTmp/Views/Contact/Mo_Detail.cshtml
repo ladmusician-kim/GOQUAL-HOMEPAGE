@@ -1,0 +1,239 @@
+﻿@model GOQUAL.Views.Contact.DetailViewModel
+@{
+    Layout = "~/Views/Shared/_MobileLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/GOQUAL/css/mobile/info.css" rel="stylesheet" />
+}
+@section Script
+{
+    <script type="text/javascript">
+        try { document.execCommand('BackgroundImageCache', false, true); } catch (e) { }
+    </script>
+    <script src="~/Lib/GOQUAL/js/angular.js"></script>
+    <script src="~/Lib/GOQUAL/js/filters.js"></script>
+    <script src="~/Lib/GOQUAL/js/ng-table.js"></script>
+    <script src="~/Lib/GOQUAL/js/ngTableResetPage.js"></script>
+    <script src="~/Lib/GOQUAL/js/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="~/Lib/GOQUAL/js/underscore-min.js"></script>
+    <script src="~/Lib/GOQUAL/js/ajaxBody.js"></script>
+    <script src="~/Lib/GOQUAL/js/Contact/advise.js"></script>
+}
+@Html.HiddenFor(x => x.Id)
+<!-- Navigation panel -->
+<nav class="main-nav js-stick stick-fixed">
+    <div class="full-wrapper relative clearfix">
+        <div class="nav-logo-wrap local-scroll">
+            <a href="#top" class="logo">
+                <img src="~/Lib/GOQUAL/images/ci/1.png" width="80" height="27" alt="" />
+            </a>
+        </div>
+        <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+        <div class="inner-nav desktop-nav">
+            <ul class="clearlist scroll-nav local-scroll">
+                <li class="active"><a href="/Home/Mobile?lang=@(Model.Lang)">HOME</a></li>
+                <li><a href="/Company/Mobile?lang=@(Model.Lang)">COMPANY</a></li>
+                <li><a href="/Product/Mobile?lang=@(Model.Lang)">PRODUCT</a></li>
+                <li><a href="/Contact/Mobile?lang=@(Model.Lang)">CONTACT</a></li>
+                <li><a href="/Joinus/Mobile?lang=@(Model.Lang)">JOIN US</a></li>
+                <li><a href="/Info/Mobile?lang=@(Model.Lang)">NEWS</a></li>
+                <li>
+                    <a href="#" class="mn-has-sub">LANGUAGE <i class="fa fa-angle-down"></i></a>
+                    <ul class="mn-sub">
+                        <li><a href="/Info/Mobile?lang=0">KOREA</a></li>
+                        <li><a href="/Info/Mobile?lang=1">ENGLISH</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div ng-controller="ContactCtrl">
+    <!-- Services Section -->
+    <section class="split-section bg-scroll bg-dark-alfa-50"
+        data-background="/Lib/GOQUAL/images/member/header.png" id="services">
+        <div class="clearfix relative">
+
+            <!-- Section Headings -->
+            <div class="split-section-headings animate-init" data-anim-type="fade-in-up" data-anim-delay="100">
+                <div class="ssh-table">
+                    <div class="ssh-cell pt-140 pt-sm-70 pt-xs-50 pb-140 pb-sm-70 pb-xs-50">
+                        <div class="section-title white">
+                            OUR STORY
+                        </div>
+                        @if (Model.Lang == 0)
+                        {
+                            <h2 class="section-heading white">BETTER LIFE를 통한 더 나은 세상.<br />
+                                QUALITY있는 세상을 만드는 기업 고퀄입니다.</h2>
+                        }
+                        else
+                        {
+                            <h2 class="section-heading white">BETTER WORLD THROUGH BETTER LIFE. THE COMPANY GOQUAL CREATE A WORLD WHERE QUALITY.</h2>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="content" class="pt30 mb30">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <article class="post clearfix">
+                        <!-- content -->
+                        <div class="row">
+                            <section class="col-sm-12">
+                                <h2>{{advise.Title}}</h2>
+                                <ul class="entry-meta">
+                                    <li class="entry-date"><i class="icon-pin"></i>&nbsp;{{advise.Created | shortdate}}</li>
+                                    <li class="entry-date"><i class="icon-eye"></i>&nbsp;{{advise.Hit}} 열람</li>
+                                    <li class="entry-comments"><i class="fa fa-comments"></i>&nbsp;{{comment.items.length}} 댓글</li>
+                                </ul>
+                                <div class="mt30 content_body">
+                                    <span ng-bind-html="advise.Content"></span>
+                                </div>
+
+                            </section>
+                        </div>
+                    </article>
+                    <hr>
+                    <!-- next, prev -->
+                    <ul class="pager">
+                        <li ng-if="advise.AfterBlogId != null && advise.AfterBlogId != 0"><a href="/Info/Detail?id={{advise.AfterBlogId}}"><i class="icon-left-open-mini"></i>&nbsp;이전글</a></li>
+                        <li ng-if="advise.BeforBlogId != null && advise.BeforBlogId != 0"><a href="/Info/Detail?id={{advise.BeforBlogId}}">다음글&nbsp;<i class="icon-right-open-mini"></i></a></li>
+                    </ul>
+
+                    <!-- comment -->
+                    <section id="comment" class="wclearfix comments pt30">
+                        <h3 class="commentNumbers">댓글 
+                                <span ng-if="comment.items">({{comment.items.length}})
+                                </span>
+                            <span ng-if="!comment.items">(0)
+                            </span>
+                        </h3>
+                        <input type="button" class="btn btn-lg mt15" style="width: 100%" value="이전 댓글 더보기"
+                            ng-show="comment.isMore"
+                            ng-click="moreComment()">
+
+                        <div class="media" ng-repeat="comment in comment.items">
+                            <div class="pull-left">
+                                <div class="imgWrapper">
+                                    <img src="~/Lib/GOQUAL/images/member/member.png" />
+                                </div>
+                            </div>
+                            <div ng-if="!comment.canDelete && !comment.canEdit">
+                                <div class="media-body">
+                                    <div class="clearfix">
+                                        <div class="media-heading">
+                                            <span>{{comment.Name}}</span>
+                                            <span class="commentInfo">
+                                                <span>{{comment.Updated | shortdate}}</span>
+                                                | 
+                                                <a ng-click="comment.canEdit = true">수정</a>
+                                                | 
+                                                <a ng-click="comment.canDelete = true">삭제</a>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <p style="font-size: 18px;">{{comment.Comment}}</p>
+
+                                    <!-- Nested media object -->
+                                    <div class="media" ng-show="comment.Comments && comment.Comments.length > 0" ng-repeat="reply in comment.Comments">
+                                        <div class="pull-left">
+                                            <!-- image -->
+                                            <div class="imgWrapper">
+                                                <img src="~/Lib/GOQUAL/images/member/member.png" />
+                                            </div>
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="clearfix">
+                                                <div class="media-heading">
+                                                    <span>{{reply.Name}}</span>
+                                                    <span class="commentInfo">
+                                                        <span>{{reply.Updated | shortdate}}</span>
+                                                        | 
+                                                        <a>삭제</a>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <p style="font-size: 18px;">{{reply.Comment}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-if="comment.canDelete" style="margin-top: 9px;">
+                                <input type="password" class="goqual_comment" ng-model="comment.confirmPass" />
+                                <input type="button" class="btn btn-mod btn-border" value="삭제" ng-click="deleteComment(comment)" />
+                                <input type="button" class="btn btn-mod btn-border" value="취소" ng-click="comment.confirmPass =''; comment.canDelete = false;" />
+                            </div>
+                            <div ng-if="comment.canEdit" style="margin-top: 9px">
+                                <input type="password" class="goqual_comment" ng-model="comment.confirmPass" />
+                                <input type="button" class="btn btn-mod btn-border" value="수정" ng-click="editComment(comment)" />
+                                <input type="button" class="btn btn-mod btn-border" value="취소" ng-click="comment.confirmPass = ''; comment.canEdit = false;" />
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <div class="mb-sm-20">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="이름" ng-model="comment.name" />
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="비밀번호" ng-model="comment.password" />
+                            </div>
+                            <div class="form-group">
+                                <textarea cols="5" class="form-control" rows="5" placeholder="멘트를 남겨주세요" ng-model="comment.comment"></textarea>
+                            </div>
+                            <input type="button" class="btn" style="width: 100%; border: 1px solid #ccc; background: #fff;" value="등록" ng-click="registComment()">
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- scroll up -->
+    <div class="bot-menu local-scroll">
+        <!-- Scroll Up -->
+        <a href="#content" class="bot-menu-item" data-anim-type="fade-in-left" data-anim-delay="0">
+            <span class="bot-menu-icon">
+                <i class="fa fa-arrow-circle-o-up"></i>
+            </span>
+            Scroll Up
+        </a>
+    </div>
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <div ng-if="reply.type == 1">
+                <h3 class="modal-title">'{{comment.Name}}'님의 댓글에 의견을 남겨주세요</h3>
+            </div>
+            <div ng-if="reply.type == 2">
+                <h3 class="modal-title">'{{comment.Name}}'님의 댓글을 수정합니다.</h3>
+            </div>
+        </div>
+        <div class="modal-body">
+          <div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="이름" ng-model="reply.name" />
+            </div>
+            <div class="form-group">
+                <textarea cols="5" class="form-control" rows="5" placeholder="멘트를 남겨주세요" ng-model="reply.comment"></textarea>
+            </div>
+        </div>
+        </div>
+        <div class="modal-footer">
+            
+            <div ng-if="reply.type == 1">
+                <button class="btn btn-mod btn-border" ng-click="cancel()">취소</button>
+                <button class="btn btn-mod btn-bordery" ng-click="ok()">등록</button>
+            </div>
+            <div ng-if="reply.type == 2">
+                <button class="btn btn-mod btn-border" ng-click="cancel()">취소</button>
+                <button class="btn btn-mod btn-border" ng-click="ok()">수정</button>
+            </div>
+        </div>
+    </script>
+</div>

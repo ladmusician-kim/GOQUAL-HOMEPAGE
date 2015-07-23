@@ -1,0 +1,1664 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{59BF20F3-CF60-4FFD-98A5-BF08B96BFBFC}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GOQUAL</RootNamespace>
+    <AssemblyName>GOQUAL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InfoController.cs" />
+    <Compile Include="Controllers\JoinusController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\BlueSwitchEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BlueSwitchEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\BlueSwitchEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BlueSwitchEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\BlueSwitchEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BlueSwitchEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\Category.cs">
+      <DependentUpon>BlueSwitchEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\GoqualUser.cs">
+      <DependentUpon>BlueSwitchEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DB\User.cs">
+      <DependentUpon>BlueSwitchEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DTO\AdviseCommentBodyDTO.cs" />
+    <Compile Include="Models\DTO\AdviseCommentDTO.cs" />
+    <Compile Include="Models\DTO\AdviseDTO.cs" />
+    <Compile Include="Models\DTO\BaseDTO.cs" />
+    <Compile Include="Models\DTO\BlogDTO.cs" />
+    <Compile Include="Models\DTO\BlogImageDTO.cs" />
+    <Compile Include="Models\DTO\BlogtypeDTO.cs" />
+    <Compile Include="Models\DTO\CategoryDTO.cs" />
+    <Compile Include="Models\DTO\CommentBodyDTO.cs" />
+    <Compile Include="Models\DTO\CommentDTO.cs" />
+    <Compile Include="Models\DTO\ItemsDTO.cs" />
+    <Compile Include="Models\DTO\LunchDTO.cs" />
+    <Compile Include="Models\DTO\NewsCommentBodyDTO.cs" />
+    <Compile Include="Models\DTO\NewsCommentDTO.cs" />
+    <Compile Include="Models\DTO\NewsDTO.cs" />
+    <Compile Include="Models\DTO\SomelightUserDTO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BlogService.cs" />
+    <Compile Include="Service\ContactService.cs" />
+    <Compile Include="Service\MailService.cs" />
+    <Compile Include="Service\MakaluService.cs" />
+    <Compile Include="Service\NewsService.cs" />
+    <Compile Include="Views\Company\ViewModel.cs" />
+    <Compile Include="Views\Contact\ViewModel.cs" />
+    <Compile Include="Views\Home\ViewModel.cs" />
+    <Compile Include="Views\Info\ViewModel.cs" />
+    <Compile Include="Views\Joinus\ViewModel.cs" />
+    <Compile Include="Views\Management\ViewModel.cs" />
+    <Compile Include="Views\Product\ViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Lib\css\custom.css.bak" />
+    <Content Include="Lib\DANDI\css\AjaxLoader.gif" />
+    <Content Include="Lib\DANDI\css\animate.css" />
+    <Content Include="Lib\DANDI\css\animations.min.css" />
+    <Content Include="Lib\DANDI\css\bootstrap.min.css" />
+    <Content Include="Lib\DANDI\css\colors\azure.css" />
+    <Content Include="Lib\DANDI\css\colors\black.css" />
+    <Content Include="Lib\DANDI\css\colors\blue-extra.css" />
+    <Content Include="Lib\DANDI\css\colors\blue.css" />
+    <Content Include="Lib\DANDI\css\colors\brown-extra.css" />
+    <Content Include="Lib\DANDI\css\colors\brown.css" />
+    <Content Include="Lib\DANDI\css\colors\cyan.css" />
+    <Content Include="Lib\DANDI\css\colors\green.css" />
+    <Content Include="Lib\DANDI\css\colors\orange.css" />
+    <Content Include="Lib\DANDI\css\colors\pink.css" />
+    <Content Include="Lib\DANDI\css\colors\purple-extra.css" />
+    <Content Include="Lib\DANDI\css\colors\purple.css" />
+    <Content Include="Lib\DANDI\css\colors\red-extra.css" />
+    <Content Include="Lib\DANDI\css\colors\yellow.css" />
+    <Content Include="Lib\DANDI\css\font-awesome.min.css" />
+    <Content Include="Lib\DANDI\css\grabbing.png" />
+    <Content Include="Lib\DANDI\css\magnific-popup.css" />
+    <Content Include="Lib\DANDI\css\owl.carousel.css" />
+    <Content Include="Lib\DANDI\css\owl.transitions.css" />
+    <Content Include="Lib\DANDI\css\rev-slider.css" />
+    <Content Include="Lib\DANDI\css\simple-line-icons.css" />
+    <Content Include="Lib\DANDI\css\simpletextrotator.css" />
+    <Content Include="Lib\DANDI\css\style-responsive.css" />
+    <Content Include="Lib\DANDI\css\style.css" />
+    <Content Include="Lib\DANDI\css\vertical-rhythm.min.css" />
+    <Content Include="Lib\DANDI\css\YTPlayer.css" />
+    <Content Include="Lib\DANDI\images\apple-touch-icon-114x114.png" />
+    <Content Include="Lib\DANDI\images\apple-touch-icon-72x72.png" />
+    <Content Include="Lib\DANDI\images\apple-touch-icon.png" />
+    <Content Include="Lib\DANDI\images\blog\blog-link-height.png" />
+    <Content Include="Lib\DANDI\images\blog\post-prev-1.jpg" />
+    <Content Include="Lib\DANDI\images\blog\post-prev-2.jpg" />
+    <Content Include="Lib\DANDI\images\blog\post-prev-3.jpg" />
+    <Content Include="Lib\DANDI\images\bx_loader.gif" />
+    <Content Include="Lib\DANDI\images\clients-logos\client-1.png" />
+    <Content Include="Lib\DANDI\images\clients-logos\client-2.png" />
+    <Content Include="Lib\DANDI\images\clients-logos\client-3.png" />
+    <Content Include="Lib\DANDI\images\clients-logos\client-4.png" />
+    <Content Include="Lib\DANDI\images\controls.png" />
+    <Content Include="Lib\DANDI\images\devices.png" />
+    <Content Include="Lib\DANDI\images\favicon-ico.png" />
+    <Content Include="Lib\DANDI\images\favicon.ico" />
+    <Content Include="Lib\DANDI\images\favicon.png" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-1.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-10.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-11.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-12.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-13.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-14.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-15.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-16.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-17.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-18.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-19.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-2.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-3.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-4.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-5.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-6.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-7.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-8.jpg" />
+    <Content Include="Lib\DANDI\images\full-width-images\section-bg-9.jpg" />
+    <Content Include="Lib\DANDI\images\intro\blog-1.png" />
+    <Content Include="Lib\DANDI\images\intro\blog-2.png" />
+    <Content Include="Lib\DANDI\images\intro\blog-3.png" />
+    <Content Include="Lib\DANDI\images\intro\blog-4.png" />
+    <Content Include="Lib\DANDI\images\intro\blog-5.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-0.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-1.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-10.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-11.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-12.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-13.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-14.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-15.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-16.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-17.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-18.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-19.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-2.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-20.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-3.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-4.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-5.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-6.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-7.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-8.png" />
+    <Content Include="Lib\DANDI\images\intro\demo-9.png" />
+    <Content Include="Lib\DANDI\images\intro\error-404.png" />
+    <Content Include="Lib\DANDI\images\intro\portfolio-1.png" />
+    <Content Include="Lib\DANDI\images\intro\portfolio-2.png" />
+    <Content Include="Lib\DANDI\images\intro\portfolio-3.png" />
+    <Content Include="Lib\DANDI\images\intro\portfolio-4.png" />
+    <Content Include="Lib\DANDI\images\intro\portfolio-5.png" />
+    <Content Include="Lib\DANDI\images\intro\portfolio-6.png" />
+    <Content Include="Lib\DANDI\images\intro\portfolio-7.png" />
+    <Content Include="Lib\DANDI\images\intro\portfolio-8.png" />
+    <Content Include="Lib\DANDI\images\intro\portfolio-9.png" />
+    <Content Include="Lib\DANDI\images\intro\pricing.png" />
+    <Content Include="Lib\DANDI\images\intro\project-1.png" />
+    <Content Include="Lib\DANDI\images\intro\project-2.png" />
+    <Content Include="Lib\DANDI\images\intro\project-3.png" />
+    <Content Include="Lib\DANDI\images\intro\project-4.png" />
+    <Content Include="Lib\DANDI\images\intro\project-5.png" />
+    <Content Include="Lib\DANDI\images\intro\ui-1.png" />
+    <Content Include="Lib\DANDI\images\intro\ui-2.png" />
+    <Content Include="Lib\DANDI\images\intro\ui-3.png" />
+    <Content Include="Lib\DANDI\images\intro\ui-4.png" />
+    <Content Include="Lib\DANDI\images\intro\ui-forms.png" />
+    <Content Include="Lib\DANDI\images\loader.gif" />
+    <Content Include="Lib\DANDI\images\logo-dark.png" />
+    <Content Include="Lib\DANDI\images\logo-white.png" />
+    <Content Include="Lib\DANDI\images\map-marker.png" />
+    <Content Include="Lib\DANDI\images\mobile-video-placeholder.jpg" />
+    <Content Include="Lib\DANDI\images\pattern-bg-1.jpg" />
+    <Content Include="Lib\DANDI\images\pattern-bg-2.png" />
+    <Content Include="Lib\DANDI\images\portfolio\full-project-1.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\full-project-2.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\full-project-3.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\full-project-4.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\full-project-5.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\full-project-6.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\projects-1.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\projects-2.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\projects-3.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\projects-4.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\projects-5.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\projects-6.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\projects-7.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\projects-8.jpg" />
+    <Content Include="Lib\DANDI\images\portfolio\projects-9.jpg" />
+    <Content Include="Lib\DANDI\images\promo-1.png" />
+    <Content Include="Lib\DANDI\images\promo-2.png" />
+    <Content Include="Lib\DANDI\images\statue.png" />
+    <Content Include="Lib\DANDI\images\team\team-1.jpg" />
+    <Content Include="Lib\DANDI\images\team\team-2.jpg" />
+    <Content Include="Lib\DANDI\images\team\team-3.jpg" />
+    <Content Include="Lib\DANDI\images\user-avatar.png" />
+    <Content Include="Lib\DANDI\js\all.js" />
+    <Content Include="Lib\DANDI\js\animations.min.js" />
+    <Content Include="Lib\DANDI\js\bootstrap.min.js" />
+    <Content Include="Lib\DANDI\js\contact-form.js" />
+    <Content Include="Lib\DANDI\js\gmap3.min.js" />
+    <Content Include="Lib\DANDI\js\imagesloaded.pkgd.min.js" />
+    <Content Include="Lib\DANDI\js\isotope.pkgd.min.js" />
+    <Content Include="Lib\DANDI\js\jquery-1.11.1.min.js" />
+    <Content Include="Lib\DANDI\js\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Lib\DANDI\js\jquery.appear.js" />
+    <Content Include="Lib\DANDI\js\jquery.ba-hashchange.min.js" />
+    <Content Include="Lib\DANDI\js\jquery.countTo.js" />
+    <Content Include="Lib\DANDI\js\jquery.easing.1.3.js" />
+    <Content Include="Lib\DANDI\js\jquery.fitvids.js" />
+    <Content Include="Lib\DANDI\js\jquery.localScroll.min.js" />
+    <Content Include="Lib\DANDI\js\jquery.magnific-popup.min.js" />
+    <Content Include="Lib\DANDI\js\jquery.mb.YTPlayer.js" />
+    <Content Include="Lib\DANDI\js\jquery.parallax-1.1.3.js" />
+    <Content Include="Lib\DANDI\js\jquery.scrollTo.min.js" />
+    <Content Include="Lib\DANDI\js\jquery.simple-text-rotator.min.js" />
+    <Content Include="Lib\DANDI\js\jquery.stellar.min.js" />
+    <Content Include="Lib\DANDI\js\jquery.sticky.js" />
+    <Content Include="Lib\DANDI\js\jquery.viewport.mini.js" />
+    <Content Include="Lib\DANDI\js\owl.carousel.min.js" />
+    <Content Include="Lib\DANDI\js\placeholder.js" />
+    <Content Include="Lib\DANDI\js\rev-slider.js" />
+    <Content Include="Lib\DANDI\js\SmoothScroll.js" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\arrowleft.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\arrowright.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\arrow_large_left.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\arrow_large_right.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\arrow_left.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\arrow_left2.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\arrow_right.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\arrow_right2.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\black50.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\bullet.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\bullets.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\bullets2.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\bullet_boxed.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\coloredbg.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\grain.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\gridtile.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\gridtile_3x3.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\gridtile_3x3_white.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\gridtile_white.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\large_left.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\large_right.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\loader.gif" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\loader2.gif" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\navigdots.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\shadow1.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\shadow2.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\shadow3.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\small_left.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\small_left_boxed.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\small_right.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\small_right_boxed.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\timer.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\timerdot.png" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\transparent.jpg" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\white50.png" />
+    <Content Include="Lib\DANDI\rs-plugin\css\settings-ie8.css" />
+    <Content Include="Lib\DANDI\rs-plugin\css\settings.css" />
+    <Content Include="Lib\DANDI\rs-plugin\images\decor_inside.png" />
+    <Content Include="Lib\DANDI\rs-plugin\images\decor_inside_white.png" />
+    <Content Include="Lib\DANDI\rs-plugin\images\decor_testimonial.png" />
+    <Content Include="Lib\DANDI\rs-plugin\images\gradient\g30.png" />
+    <Content Include="Lib\DANDI\rs-plugin\images\gradient\g40.png" />
+    <Content Include="Lib\DANDI\rs-plugin\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="Lib\DANDI\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <Content Include="Lib\DANDI\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Lib\DANDI\rs-plugin\js\jquery.themepunch.tools.min.js" />
+    <Content Include="Lib\font-icons\custom-icons\config.json" />
+    <Content Include="Lib\font-icons\custom-icons\font\custom-icons.eot" />
+    <Content Include="Lib\font-icons\custom-icons\font\custom-icons.svg" />
+    <Content Include="Lib\font-icons\custom-icons\font\custom-icons.ttf" />
+    <Content Include="Lib\font-icons\custom-icons\font\custom-icons.woff" />
+    <Content Include="Lib\GOQUAL\css\account\common.css" />
+    <Content Include="Lib\GOQUAL\css\common.css" />
+    <Content Include="Lib\GOQUAL\css\jquery.fullPage.css" />
+    <Content Include="Lib\GOQUAL\css\jquery.toastmessage.css" />
+    <Content Include="Lib\GOQUAL\css\management\common.css" />
+    <Content Include="Lib\GOQUAL\css\management\news.css" />
+    <Content Include="Lib\GOQUAL\css\mobile\common.css" />
+    <Content Include="Lib\GOQUAL\css\mobile\home.css" />
+    <Content Include="Lib\GOQUAL\css\mobile\company.css" />
+    <Content Include="Lib\GOQUAL\css\mobile\contact.css" />
+    <Content Include="Lib\GOQUAL\css\mobile\info.css" />
+    <Content Include="Lib\GOQUAL\css\mobile\product.css" />
+    <Content Include="Lib\GOQUAL\css\ng-table.css" />
+    <Content Include="Lib\GOQUAL\images\alert\close.gif" />
+    <Content Include="Lib\GOQUAL\images\alert\error.png" />
+    <Content Include="Lib\GOQUAL\images\alert\notice.png" />
+    <Content Include="Lib\GOQUAL\images\alert\success.png" />
+    <Content Include="Lib\GOQUAL\images\alert\warning.png" />
+    <Content Include="Lib\GOQUAL\images\ci\1.png" />
+    <Content Include="Lib\GOQUAL\images\ci\2.png" />
+    <Content Include="Lib\GOQUAL\images\ci\logo.png" />
+    <Content Include="Lib\GOQUAL\images\company\eng\company_1_eng.png" />
+    <Content Include="Lib\GOQUAL\images\company\eng\company_2_eng.png" />
+    <Content Include="Lib\GOQUAL\images\company\eng\company_3_eng.png" />
+    <Content Include="Lib\GOQUAL\images\company\eng\company_4_eng.png" />
+    <Content Include="Lib\GOQUAL\images\company\eng\company_5_eng.png" />
+    <Content Include="Lib\GOQUAL\images\company\ko\company_1.png" />
+    <Content Include="Lib\GOQUAL\images\company\ko\company_2.png" />
+    <Content Include="Lib\GOQUAL\images\company\ko\company_3.png" />
+    <Content Include="Lib\GOQUAL\images\company\ko\company_4.png" />
+    <Content Include="Lib\GOQUAL\images\company\ko\company_5.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\eng\company_mobile_4_eng.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\eng\company_mobile_5_eng.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_1_1.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_1_2.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_1_3.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_1_4.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_2_1.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_2_2.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_3_1.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_4_1.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_4_2.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_5_1.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_5_2.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_5_3.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_5_4.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_5_5.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_5_6.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_5_7.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_5_8.png" />
+    <Content Include="Lib\GOQUAL\images\company\mobile\ko\company_mobile_arrow.png" />
+    <Content Include="Lib\GOQUAL\images\home\eng\0_0.png" />
+    <Content Include="Lib\GOQUAL\images\home\eng\0_1.png" />
+    <Content Include="Lib\GOQUAL\images\home\eng\home_eng_1.png" />
+    <Content Include="Lib\GOQUAL\images\home\eng\home_eng_2_1.png" />
+    <Content Include="Lib\GOQUAL\images\home\eng\home_eng_2_2.png" />
+    <Content Include="Lib\GOQUAL\images\home\home_typho.png" />
+    <Content Include="Lib\GOQUAL\images\home\kor\home_ko_1.png" />
+    <Content Include="Lib\GOQUAL\images\home\kor\home_ko_2.png" />
+    <Content Include="Lib\GOQUAL\images\home\left_arrow.png" />
+    <Content Include="Lib\GOQUAL\images\home\right_arrow.png" />
+    <Content Include="Lib\GOQUAL\images\join\eng\1.png" />
+    <Content Include="Lib\GOQUAL\images\join\eng\2.png" />
+    <Content Include="Lib\GOQUAL\images\join\eng\joinus_eng_full.png" />
+    <Content Include="Lib\GOQUAL\images\join\eng\join_us_merge_eng.png" />
+    <Content Include="Lib\GOQUAL\images\join\joinus_1.png" />
+    <Content Include="Lib\GOQUAL\images\join\ko\2.png" />
+    <Content Include="Lib\GOQUAL\images\join\ko\joinus_ko_full.png" />
+    <Content Include="Lib\GOQUAL\images\join\ko\join_us_merge.png" />
+    <Content Include="Lib\GOQUAL\images\member\byungil.PNG" />
+    <Content Include="Lib\GOQUAL\images\member\dongjin.PNG" />
+    <Content Include="Lib\GOQUAL\images\member\header.PNG" />
+    <Content Include="Lib\GOQUAL\images\member\hyunggyu.jpg" />
+    <Content Include="Lib\GOQUAL\images\member\member.png" />
+    <Content Include="Lib\GOQUAL\images\member\member_1.png" />
+    <Content Include="Lib\GOQUAL\images\member\member_2.png" />
+    <Content Include="Lib\GOQUAL\images\member\sangbum.PNG" />
+    <Content Include="Lib\GOQUAL\images\member\seungjun.PNG" />
+    <Content Include="Lib\GOQUAL\images\member\youtube.PNG" />
+    <Content Include="Lib\GOQUAL\images\product\background\product_1_background.png" />
+    <Content Include="Lib\GOQUAL\images\product\background\product_2_background.png" />
+    <Content Include="Lib\GOQUAL\images\product\background\product_3_background.png" />
+    <Content Include="Lib\GOQUAL\images\product\background\product_4_background.png" />
+    <Content Include="Lib\GOQUAL\images\product\background\product_5_background.png" />
+    <Content Include="Lib\GOQUAL\images\product\eng\product_1_text_eng.png" />
+    <Content Include="Lib\GOQUAL\images\product\eng\product_2_text_eng.png" />
+    <Content Include="Lib\GOQUAL\images\product\eng\product_3_text_eng.png" />
+    <Content Include="Lib\GOQUAL\images\product\eng\product_4_text_eng.png" />
+    <Content Include="Lib\GOQUAL\images\product\eng\product_5_text_eng.png" />
+    <Content Include="Lib\GOQUAL\images\product\ko\product_1_text.png" />
+    <Content Include="Lib\GOQUAL\images\product\ko\product_2_text.png" />
+    <Content Include="Lib\GOQUAL\images\product\ko\product_3_text.png" />
+    <Content Include="Lib\GOQUAL\images\product\ko\product_4_text.png" />
+    <Content Include="Lib\GOQUAL\images\product\ko\product_5_text.png" />
+    <Content Include="Lib\GOQUAL\images\product\mobile\product_mobile_1.png" />
+    <Content Include="Lib\GOQUAL\images\product\mobile\product_mobile_2.png" />
+    <Content Include="Lib\GOQUAL\images\product\mobile\product_mobile_3.png" />
+    <Content Include="Lib\GOQUAL\images\product\mobile\product_mobile_4.png" />
+    <Content Include="Lib\GOQUAL\images\product\mobile\product_mobile_5.png" />
+    <Content Include="Lib\GOQUAL\images\product\product_main.png" />
+    <Content Include="Lib\GOQUAL\js\ajaxBody.js" />
+    <Content Include="Lib\GOQUAL\js\angular-scroll.js" />
+    <Content Include="Lib\GOQUAL\js\angular.js" />
+    <Content Include="Lib\GOQUAL\js\Common.js" />
+    <Content Include="Lib\GOQUAL\js\Company\Index.js" />
+    <Content Include="Lib\GOQUAL\js\Contact\create.js" />
+    <Content Include="Lib\GOQUAL\js\Contact\Index.js" />
+    <Content Include="Lib\GOQUAL\js\Contact\advise.js" />
+    <Content Include="Lib\GOQUAL\js\Contact\mobile.js" />
+    <Content Include="Lib\GOQUAL\js\Contact\mo_advise.js" />
+    <Content Include="Lib\GOQUAL\js\Contact\mo_create.js" />
+    <Content Include="Lib\GOQUAL\js\filters.js" />
+    <Content Include="Lib\GOQUAL\js\flow.js" />
+    <Content Include="Lib\GOQUAL\js\fusty-flow-factory.js" />
+    <Content Include="Lib\GOQUAL\js\fusty-flow.js" />
+    <Content Include="Lib\GOQUAL\js\Home\mobile.js" />
+    <Content Include="Lib\GOQUAL\js\Home\Index.js" />
+    <Content Include="Lib\GOQUAL\js\Info\mo_news.js" />
+    <Content Include="Lib\GOQUAL\js\Info\mo_blog.js" />
+    <Content Include="Lib\GOQUAL\js\Info\News.js" />
+    <Content Include="Lib\GOQUAL\js\Info\Blog.js" />
+    <Content Include="Lib\GOQUAL\js\Info\Info.js" />
+    <Content Include="Lib\GOQUAL\js\Joinus\Index.js" />
+    <Content Include="Lib\GOQUAL\js\jquery.fullPage.js" />
+    <Content Include="Lib\GOQUAL\js\jquery.slimscroll.min.js" />
+    <Content Include="Lib\GOQUAL\js\jquery.toastmessage.js" />
+    <Content Include="Lib\GOQUAL\js\makeluHeaderAPI.js" />
+    <Content Include="Lib\GOQUAL\js\management\advise.js" />
+    <Content Include="Lib\GOQUAL\js\management\advise\create.js" />
+    <Content Include="Lib\GOQUAL\js\management\advise\detail.js" />
+    <Content Include="Lib\GOQUAL\js\management\advise\index.js" />
+    <Content Include="Lib\GOQUAL\js\management\index.js" />
+    <Content Include="Lib\GOQUAL\js\management\lunch.js" />
+    <Content Include="Lib\GOQUAL\js\management\news\create.js" />
+    <Content Include="Lib\GOQUAL\js\management\news\detail.js" />
+    <Content Include="Lib\GOQUAL\js\management\news\index.js" />
+    <Content Include="Lib\GOQUAL\js\management\user.js" />
+    <Content Include="Lib\GOQUAL\js\management\blog.js" />
+    <Content Include="Lib\GOQUAL\js\management\common.js" />
+    <Content Include="Lib\GOQUAL\js\me-mediaelements.js" />
+    <Content Include="Lib\GOQUAL\js\momentjs.js" />
+    <Content Include="Lib\GOQUAL\js\ng-flow.js" />
+    <Content Include="Lib\GOQUAL\js\ng-table.js" />
+    <Content Include="Lib\GOQUAL\js\ngTableResetPage.js" />
+    <Content Include="Lib\GOQUAL\js\Product\Index.js" />
+    <Content Include="Lib\GOQUAL\js\toastBody.js" />
+    <Content Include="Lib\GOQUAL\js\ui-bootstrap-tpls-0.11.0.js" />
+    <Content Include="Lib\GOQUAL\js\underscore-min.js" />
+    <Content Include="Lib\js-plugin\big-video\.gitignore" />
+    <Content Include="Lib\js-plugin\big-video\BigVideo.jquery.json" />
+    <Content Include="Lib\js-plugin\big-video\bower.json" />
+    <Content Include="Lib\js-plugin\big-video\README.md" />
+    <Content Include="Lib\js-plugin\jquery.sharrre-1.3.4\README.md" />
+    <Content Include="Lib\js-plugin\jquery.sharrre-1.3.4\sharrre.php" />
+    <Content Include="Lib\js-plugin\jquery\jquery-1.10.2.min.map" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\arial.ttf" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\php\form-handler-quotation.php" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\php\form-handler.php" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\php\image.php" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\json\customData.json" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\json\data.json" />
+    <Content Include="Lib\js-plugin\owl.carousel\LICENSE" />
+    <Content Include="Lib\js-plugin\owl.carousel\README.md" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\.htaccess" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\json\customData.json" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\json\data.json" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\LICENSE" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\js\README.md" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\type\fontello\fontello-social.eot" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\type\fontello\fontello-social.svg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\type\fontello\fontello-social.ttf" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\type\fontello\fontello-social.woff" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\type\fontello\fontello.eot" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\type\fontello\fontello.svg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\type\fontello\fontello.ttf" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\type\fontello\fontello.woff" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\arrows.psd" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\bullets.psd" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\small_arrows.psd" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\font\revicons.eot" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\font\revicons.svg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\font\revicons.ttf" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\font\revicons.woff" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\videojs\demo.captions.vtt" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\videojs\font\vjs.eot" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\videojs\font\vjs.svg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\videojs\font\vjs.ttf" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\videojs\font\vjs.woff" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\arrows.psd" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\bullets.psd" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\small_arrows.psd" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\font\revicons.eot" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\font\revicons.svg" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\font\revicons.ttf" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\font\revicons.woff" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\videojs\demo.captions.vtt" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\videojs\font\vjs.eot" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\videojs\font\vjs.svg" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\videojs\font\vjs.ttf" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\videojs\font\vjs.woff" />
+    <Content Include="Lib\Management\css\animate.css" />
+    <Content Include="Lib\Management\css\app.css" />
+    <Content Include="Lib\Management\css\bootstrap.css" />
+    <Content Include="Lib\Management\css\font-awesome.min.css" />
+    <Content Include="Lib\Management\css\font.css" />
+    <Content Include="Lib\Management\css\landing.css" />
+    <Content Include="Lib\Management\css\plugin.css" />
+    <Content Include="Lib\Management\images\avatar.jpg" />
+    <Content Include="Lib\Management\images\avatar_default.jpg" />
+    <Content Include="Lib\Management\images\ipad.png" />
+    <Content Include="Lib\Management\images\iphone.png" />
+    <Content Include="Lib\Management\images\logo.png" />
+    <Content Include="Lib\Management\images\macpro.png" />
+    <Content Include="Lib\Management\images\thumb_1.jpg" />
+    <Content Include="Lib\Management\images\thumb_2.jpg" />
+    <Content Include="Lib\Management\images\thumb_3.jpg" />
+    <Content Include="Lib\Management\js\app.data.js" />
+    <Content Include="Lib\Management\js\app.js" />
+    <Content Include="Lib\Management\js\app.plugin.js" />
+    <Content Include="Lib\Management\js\appear\jquery.appear.js" />
+    <Content Include="Lib\Management\js\apps\notes.js" />
+    <Content Include="Lib\Management\js\apps\tasks.js" />
+    <Content Include="Lib\Management\js\bootstrap.js" />
+    <Content Include="Lib\Management\js\calendar\bootstrap_calendar.css" />
+    <Content Include="Lib\Management\js\calendar\bootstrap_calendar.js" />
+    <Content Include="Lib\Management\js\calendar\bootstrap_calendar.min.js" />
+    <Content Include="Lib\Management\js\calendar\demo.js" />
+    <Content Include="Lib\Management\js\charts\easypiechart\jquery.easy-pie-chart.js" />
+    <Content Include="Lib\Management\js\charts\flot\demo.js" />
+    <Content Include="Lib\Management\js\charts\flot\jquery.flot.min.js" />
+    <Content Include="Lib\Management\js\charts\flot\jquery.flot.orderBars.js" />
+    <Content Include="Lib\Management\js\charts\flot\jquery.flot.pie.min.js" />
+    <Content Include="Lib\Management\js\charts\flot\jquery.flot.resize.js" />
+    <Content Include="Lib\Management\js\charts\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Lib\Management\js\charts\morris\morris.min.js" />
+    <Content Include="Lib\Management\js\charts\morris\raphael-min.js" />
+    <Content Include="Lib\Management\js\charts\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Lib\Management\js\combodate\combodate.js" />
+    <Content Include="Lib\Management\js\datatables\datatables.css" />
+    <Content Include="Lib\Management\js\datatables\jquery.dataTables.min.js" />
+    <Content Include="Lib\Management\js\datepicker\bootstrap-datepicker.js" />
+    <Content Include="Lib\Management\js\datepicker\datepicker.css" />
+    <Content Include="Lib\Management\js\file-input\bootstrap.file-input.js" />
+    <Content Include="Lib\Management\js\fuelux\fuelux.css" />
+    <Content Include="Lib\Management\js\fuelux\fuelux.js" />
+    <Content Include="Lib\Management\js\fullcalendar\fullcalendar.css" />
+    <Content Include="Lib\Management\js\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Lib\Management\js\grid\gallery.css" />
+    <Content Include="Lib\Management\js\grid\gallery.js" />
+    <Content Include="Lib\Management\js\grid\jquery.grid-a-licious.min.js" />
+    <Content Include="Lib\Management\js\grid\masonry.pkgd.min.js" />
+    <Content Include="Lib\Management\js\ie\excanvas.js" />
+    <Content Include="Lib\Management\js\ie\fix.js" />
+    <Content Include="Lib\Management\js\ie\html5.js" />
+    <Content Include="Lib\Management\js\ie\respond.min.js" />
+    <Content Include="Lib\Management\js\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Lib\Management\js\jquery.min.js" />
+    <Content Include="Lib\Management\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Lib\Management\js\landing.js" />
+    <Content Include="Lib\Management\js\libs\backbone-min.js" />
+    <Content Include="Lib\Management\js\libs\backbone.localStorage-min.js" />
+    <Content Include="Lib\Management\js\libs\jquery.pjax.js" />
+    <Content Include="Lib\Management\js\libs\jquery.transit.js" />
+    <Content Include="Lib\Management\js\libs\moment.min.js" />
+    <Content Include="Lib\Management\js\libs\underscore-min.js" />
+    <Content Include="Lib\Management\js\maps\demo.js" />
+    <Content Include="Lib\Management\js\maps\gmaps.js" />
+    <Content Include="Lib\Management\js\markdown\bartik.css" />
+    <Content Include="Lib\Management\js\markdown\demo.js" />
+    <Content Include="Lib\Management\js\markdown\epic-light.css" />
+    <Content Include="Lib\Management\js\markdown\epiceditor.css" />
+    <Content Include="Lib\Management\js\markdown\epiceditor.min.js" />
+    <Content Include="Lib\Management\js\nestable\demo.js" />
+    <Content Include="Lib\Management\js\nestable\jquery.nestable.js" />
+    <Content Include="Lib\Management\js\nestable\nestable.css" />
+    <Content Include="Lib\Management\js\parsley\parsley.extend.js" />
+    <Content Include="Lib\Management\js\parsley\parsley.min.js" />
+    <Content Include="Lib\Management\js\prettyphoto\default\default_thumb.png" />
+    <Content Include="Lib\Management\js\prettyphoto\default\loader.gif" />
+    <Content Include="Lib\Management\js\prettyphoto\default\sprite.png" />
+    <Content Include="Lib\Management\js\prettyphoto\default\sprite_next.png" />
+    <Content Include="Lib\Management\js\prettyphoto\default\sprite_prev.png" />
+    <Content Include="Lib\Management\js\prettyphoto\default\sprite_x.png" />
+    <Content Include="Lib\Management\js\prettyphoto\default\sprite_y.png" />
+    <Content Include="Lib\Management\js\prettyphoto\jquery.prettyPhoto.js" />
+    <Content Include="Lib\Management\js\prettyphoto\prettyPhoto.css" />
+    <Content Include="Lib\Management\js\scroll\smoothscroll.js" />
+    <Content Include="Lib\Management\js\select2\select2.css" />
+    <Content Include="Lib\Management\js\select2\select2.min.js" />
+    <Content Include="Lib\Management\js\slider\bootstrap-slider.js" />
+    <Content Include="Lib\Management\js\slider\slider.css" />
+    <Content Include="Lib\Management\js\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Lib\Management\js\sortable\jquery.sortable.js" />
+    <Content Include="Lib\Management\js\wysiwyg\bootstrap-wysiwyg.js" />
+    <Content Include="Lib\Management\js\wysiwyg\demo.js" />
+    <Content Include="Lib\Management\js\wysiwyg\jquery.hotkeys.js" />
+    <Content Include="Lib\Management\less\readme.txt" />
+    <Content Include="Lib\summernote\angular-summernote.js" />
+    <Content Include="Lib\summernote\summernote-bs2.css" />
+    <Content Include="Lib\summernote\summernote-bs3.css" />
+    <Content Include="Lib\summernote\summernote.css" />
+    <Content Include="Lib\summernote\summernote.js" />
+    <Content Include="Lib\summernote\summernote.min.js" />
+    <Content Include="Lib\DANDI\css\ytp-regular.eot" />
+    <Content Include="Lib\DANDI\css\ytp-regular.ttf" />
+    <Content Include="Lib\DANDI\css\ytp-regular.woff" />
+    <Content Include="Lib\DANDI\fonts\fontawesome-webfont.eot" />
+    <Content Include="Lib\DANDI\fonts\fontawesome-webfont.svg" />
+    <Content Include="Lib\DANDI\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Lib\DANDI\fonts\fontawesome-webfont.woff" />
+    <Content Include="Lib\DANDI\fonts\FontAwesome.otf" />
+    <Content Include="Lib\DANDI\fonts\Simple-Line-Icons.dev.svg" />
+    <Content Include="Lib\DANDI\fonts\Simple-Line-Icons.eot" />
+    <Content Include="Lib\DANDI\fonts\Simple-Line-Icons.svg" />
+    <Content Include="Lib\DANDI\fonts\Simple-Line-Icons.ttf" />
+    <Content Include="Lib\DANDI\fonts\Simple-Line-Icons.woff" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\arrows.psd" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\bullets.psd" />
+    <Content Include="Lib\DANDI\rs-plugin\assets\small_arrows.psd" />
+    <Content Include="Lib\DANDI\rs-plugin\font\revicons.eot" />
+    <Content Include="Lib\DANDI\rs-plugin\font\revicons.svg" />
+    <Content Include="Lib\DANDI\rs-plugin\font\revicons.ttf" />
+    <Content Include="Lib\DANDI\rs-plugin\font\revicons.woff" />
+    <Content Include="Lib\DANDI\rs-plugin\js\.DS_Store" />
+    <Content Include="Lib\Management\fonts\fontawesome-webfont.eot" />
+    <Content Include="Lib\Management\fonts\fontawesome-webfont.svg" />
+    <Content Include="Lib\Management\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Lib\Management\fonts\fontawesome-webfont.woff" />
+    <Content Include="Lib\Management\fonts\FontAwesome.otf" />
+    <Content Include="Lib\Management\fonts\opensans\opensans-bold.woff" />
+    <Content Include="Lib\Management\fonts\opensans\opensans-light.woff" />
+    <Content Include="Lib\Management\fonts\opensans\opensans.woff" />
+    <Content Include="Lib\Management\js\calendar\json.php" />
+    <Content Include="Lib\Management\js\data\datagrid.json" />
+    <Content Include="Lib\Management\js\data\datatable.json" />
+    <Content Include="Lib\Management\less\app.arrow.less" />
+    <Content Include="Lib\Management\less\app.buttons.less" />
+    <Content Include="Lib\Management\less\app.colors.less" />
+    <Content Include="Lib\Management\less\app.layout.less" />
+    <Content Include="Lib\Management\less\app.less" />
+    <Content Include="Lib\Management\less\app.mixins.less" />
+    <Content Include="Lib\Management\less\app.nav.less" />
+    <Content Include="Lib\Management\less\app.plugin.less" />
+    <Content Include="Lib\Management\less\app.reset.less" />
+    <Content Include="Lib\Management\less\app.slider.less" />
+    <Content Include="Lib\Management\less\app.switch.less" />
+    <Content Include="Lib\Management\less\app.utilities.less" />
+    <Content Include="Lib\Management\less\app.variables.less" />
+    <Content Include="Lib\Management\less\app.widgets.less" />
+    <Content Include="Lib\Management\less\less.php" />
+    <Content Include="Lib\Management\less\lessc.inc.php" />
+    <EntityDeploy Include="Models\DB\BlueSwitchEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BlueSwitchEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DB\BlueSwitchEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BlueSwitchEntities.edmx</DependentUpon>
+      <LastGenOutput>BlueSwitchEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\DB\BlueSwitchEntities.edmx.diagram">
+      <DependentUpon>BlueSwitchEntities.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\DB\BlueSwitchEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BlueSwitchEntities.edmx</DependentUpon>
+      <LastGenOutput>BlueSwitchEntities.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\GOQUAL.pubxml" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Lib\bootstrap\js\bootstrap.js" />
+    <Content Include="Lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Lib\css\blue.css" />
+    <Content Include="Lib\css\coffee.css" />
+    <Content Include="Lib\css\colors.css" />
+    <Content Include="Lib\css\custom.css" />
+    <Content Include="Lib\css\dark-blue.css" />
+    <Content Include="Lib\css\dark-coffee.css" />
+    <Content Include="Lib\css\dark-dark.css" />
+    <Content Include="Lib\css\dark-green.css" />
+    <Content Include="Lib\css\dark-light.css" />
+    <Content Include="Lib\css\dark-orange.css" />
+    <Content Include="Lib\css\dark-pink.css" />
+    <Content Include="Lib\css\dark-red.css" />
+    <Content Include="Lib\css\dark-sea-green.css" />
+    <Content Include="Lib\css\dark-yellow.css" />
+    <Content Include="Lib\css\dark.css" />
+    <Content Include="Lib\css\green.css" />
+    <Content Include="Lib\css\layout.css" />
+    <Content Include="Lib\css\light.css" />
+    <Content Include="Lib\css\orange.css" />
+    <Content Include="Lib\css\pink.css" />
+    <Content Include="Lib\css\pygments-manni.css" />
+    <Content Include="Lib\css\red.css" />
+    <Content Include="Lib\css\sea-green.css" />
+    <Content Include="Lib\css\yellow.css" />
+    <Content Include="Lib\font-icons\custom-icons\css\animation.css" />
+    <Content Include="Lib\font-icons\custom-icons\css\custom-icons-codes.css" />
+    <Content Include="Lib\font-icons\custom-icons\css\custom-icons-embedded.css" />
+    <Content Include="Lib\font-icons\custom-icons\css\custom-icons-ie7-codes.css" />
+    <Content Include="Lib\font-icons\custom-icons\css\custom-icons-ie7.css" />
+    <Content Include="Lib\font-icons\custom-icons\css\custom-icons.css" />
+    <Content Include="Lib\font-icons\custom-icons\demo.html" />
+    <Content Include="Lib\font-icons\custom-icons\LICENSE.txt" />
+    <Content Include="Lib\font-icons\custom-icons\README.txt" />
+    <Content Include="Lib\images\apple-touch-icon-114x114.png" />
+    <Content Include="Lib\images\apple-touch-icon-144x144.png" />
+    <Content Include="Lib\images\apple-touch-icon-57x57.png" />
+    <Content Include="Lib\images\apple-touch-icon-72x72.png" />
+    <Content Include="Lib\images\apple-touch-icon.png" />
+    <Content Include="Lib\images\blog\blog-pic1.jpg" />
+    <Content Include="Lib\images\blog\blog-pic2.jpg" />
+    <Content Include="Lib\images\clients\client1.jpg" />
+    <Content Include="Lib\images\clients\client2.jpg" />
+    <Content Include="Lib\images\clients\client3.jpg" />
+    <Content Include="Lib\images\clients\logo1.png" />
+    <Content Include="Lib\images\clients\logo2.png" />
+    <Content Include="Lib\images\clients\logo3.png" />
+    <Content Include="Lib\images\clients\logo4.png" />
+    <Content Include="Lib\images\clients\logo5.png" />
+    <Content Include="Lib\images\clients\logo6.png" />
+    <Content Include="Lib\images\favicon.ico" />
+    <Content Include="Lib\images\icon-map.png" />
+    <Content Include="Lib\images\loading.gif" />
+    <Content Include="Lib\images\logo-big.png" />
+    <Content Include="Lib\images\main-logo.png" />
+    <Content Include="Lib\images\neko-logo.png" />
+    <Content Include="Lib\images\portfolio\carousel-1.jpg" />
+    <Content Include="Lib\images\portfolio\carousel-2.jpg" />
+    <Content Include="Lib\images\portfolio\carousel-3.jpg" />
+    <Content Include="Lib\images\portfolio\img-fullwidth-1.jpg" />
+    <Content Include="Lib\images\portfolio\img-fullwidth-2.jpg" />
+    <Content Include="Lib\images\portfolio\vign1.jpg" />
+    <Content Include="Lib\images\portfolio\vign10.jpg" />
+    <Content Include="Lib\images\portfolio\vign2.jpg" />
+    <Content Include="Lib\images\portfolio\vign3.jpg" />
+    <Content Include="Lib\images\portfolio\vign4.jpg" />
+    <Content Include="Lib\images\portfolio\vign5.jpg" />
+    <Content Include="Lib\images\portfolio\vign6.jpg" />
+    <Content Include="Lib\images\portfolio\vign7.jpg" />
+    <Content Include="Lib\images\portfolio\vign8.jpg" />
+    <Content Include="Lib\images\portfolio\vign9.jpg" />
+    <Content Include="Lib\images\portfolio\zoom1.jpg" />
+    <Content Include="Lib\images\portfolio\zoom10.jpg" />
+    <Content Include="Lib\images\portfolio\zoom2.jpg" />
+    <Content Include="Lib\images\portfolio\zoom3.jpg" />
+    <Content Include="Lib\images\portfolio\zoom4.jpg" />
+    <Content Include="Lib\images\portfolio\zoom5.jpg" />
+    <Content Include="Lib\images\portfolio\zoom6.jpg" />
+    <Content Include="Lib\images\portfolio\zoom7.jpg" />
+    <Content Include="Lib\images\portfolio\zoom8.jpg" />
+    <Content Include="Lib\images\portfolio\zoom9.jpg" />
+    <Content Include="Lib\images\slider\camera\camera-slide1.jpg" />
+    <Content Include="Lib\images\slider\camera\camera-slide2.jpg" />
+    <Content Include="Lib\images\slider\camera\camera-slide3.jpg" />
+    <Content Include="Lib\images\slider\camera\camera-v-slide1.jpg" />
+    <Content Include="Lib\images\slider\camera\camera-v-slide2.jpg" />
+    <Content Include="Lib\images\slider\camera\camera-v-slide3.jpg" />
+    <Content Include="Lib\images\slider\carousel\corporate-mini-1.jpg" />
+    <Content Include="Lib\images\slider\carousel\corporate-mini-2.jpg" />
+    <Content Include="Lib\images\slider\carousel\corporate-mini-3.jpg" />
+    <Content Include="Lib\images\slider\carousel\slide1.jpg" />
+    <Content Include="Lib\images\slider\carousel\slide2.jpg" />
+    <Content Include="Lib\images\slider\carousel\slide3.jpg" />
+    <Content Include="Lib\images\slider\rs-slider\demo\clock.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\clock2.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\cloud1.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\cloud2.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\cloud3.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\darkblurbg.jpg" />
+    <Content Include="Lib\images\slider\rs-slider\demo\dummy.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\graph.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\guy1.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\guy2.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\guy3.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\guy4.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\guy5.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\hill1.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\hill2.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\hill3.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\hill4.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\imac1.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\logo.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\lupe_imac.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\lupe_macbook.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\macbook2.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\slidebg1.jpg" />
+    <Content Include="Lib\images\slider\rs-slider\demo\slidebg1.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\star.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\transparent.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\trans_tile2.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\videobg1.jpg" />
+    <Content Include="Lib\images\slider\rs-slider\demo\videoshadow.png" />
+    <Content Include="Lib\images\slider\rs-slider\demo\video_forest.jpg" />
+    <Content Include="Lib\images\slider\rs-slider\demo\woman.png" />
+    <Content Include="Lib\images\slider\rs-slider\slider-1\bg1.jpg" />
+    <Content Include="Lib\images\slider\rs-slider\slider-1\bg2.jpg" />
+    <Content Include="Lib\images\slider\rs-slider\slider-1\bg3.jpg" />
+    <Content Include="Lib\images\slider\rs-slider\slider-1\logo-big.png" />
+    <Content Include="Lib\images\slider\super\supersized-1.jpg" />
+    <Content Include="Lib\images\slider\super\supersized-2.jpg" />
+    <Content Include="Lib\images\slider\super\supersized-3.jpg" />
+    <Content Include="Lib\images\team\team-corporate-1.jpg" />
+    <Content Include="Lib\images\team\team-corporate-2.jpg" />
+    <Content Include="Lib\images\team\team-corporate-3.jpg" />
+    <Content Include="Lib\images\team\team-corporate-4.jpg" />
+    <Content Include="Lib\images\theme-pics\animation-demo.jpg" />
+    <Content Include="Lib\images\theme-pics\big-header.jpg" />
+    <Content Include="Lib\images\theme-pics\col-left-grey.png" />
+    <Content Include="Lib\images\theme-pics\colors.png" />
+    <Content Include="Lib\images\theme-pics\devices.png" />
+    <Content Include="Lib\images\theme-pics\flat-laptop.png" />
+    <Content Include="Lib\images\theme-pics\flat-mobile.png" />
+    <Content Include="Lib\images\theme-pics\flat-pic.png" />
+    <Content Include="Lib\images\theme-pics\fullwidth.jpg" />
+    <Content Include="Lib\images\theme-pics\header-demo1.png" />
+    <Content Include="Lib\images\theme-pics\header-demo2.png" />
+    <Content Include="Lib\images\theme-pics\header-demo3.png" />
+    <Content Include="Lib\images\theme-pics\header-demo4.png" />
+    <Content Include="Lib\images\theme-pics\header-demo5.png" />
+    <Content Include="Lib\images\theme-pics\header-demo6.png" />
+    <Content Include="Lib\images\theme-pics\home-carousel-1.png" />
+    <Content Include="Lib\images\theme-pics\home-carousel-2.png" />
+    <Content Include="Lib\images\theme-pics\home-carousel-3.png" />
+    <Content Include="Lib\images\theme-pics\home-carousel-b-1.png" />
+    <Content Include="Lib\images\theme-pics\home-carousel-b-2.png" />
+    <Content Include="Lib\images\theme-pics\home-carousel-b-3.png" />
+    <Content Include="Lib\images\theme-pics\parallax-1.jpg" />
+    <Content Include="Lib\images\theme-pics\parallax-2.jpg" />
+    <Content Include="Lib\images\theme-pics\parallax-3.jpg" />
+    <Content Include="Lib\images\theme-pics\parallax-mask.png" />
+    <Content Include="Lib\images\theme-pics\pic-mega-menu.png" />
+    <Content Include="Lib\images\theme-pics\screens-demo.png" />
+    <Content Include="Lib\images\theme-pics\services.png" />
+    <Content Include="Lib\images\theme-pics\textures\bg-home.jpg" />
+    <Content Include="Lib\images\theme-pics\timeline.png" />
+    <Content Include="Lib\images\theme-pics\woman.jpg" />
+    <Content Include="Lib\images\theme-pics\works1.jpg" />
+    <Content Include="Lib\images\theme-pics\works2.jpg" />
+    <Content Include="Lib\images\theme-pics\works3.jpg" />
+    <Content Include="Lib\images\theme-pics\works4.jpg" />
+    <Content Include="Lib\images\theme-pics\works5.jpg" />
+    <Content Include="Lib\images\theme-pics\works6.jpg" />
+    <Content Include="Lib\js-plugin\animate\jquery.animate-enhanced.js" />
+    <Content Include="Lib\js-plugin\animate\jquery.animate-enhanced.min.js" />
+    <Content Include="Lib\js-plugin\animation-framework\animate.css" />
+    <Content Include="Lib\js-plugin\animation-framework\animate.min.css" />
+    <Content Include="Lib\js-plugin\appear\jquery.appear.js" />
+    <Content Include="Lib\js-plugin\appear\nekoAnim.css" />
+    <Content Include="Lib\js-plugin\big-video\css\bigvideo.css" />
+    <Content Include="Lib\js-plugin\big-video\css\bigvideo.png" />
+    <Content Include="Lib\js-plugin\big-video\lib\bigvideo.js" />
+    <Content Include="Lib\js-plugin\camera\camera.js" />
+    <Content Include="Lib\js-plugin\camera\camera.min.js" />
+    <Content Include="Lib\js-plugin\camera\css\camera.css" />
+    <Content Include="Lib\js-plugin\camera\images\blank.gif" />
+    <Content Include="Lib\js-plugin\camera\images\camera-loader.gif" />
+    <Content Include="Lib\js-plugin\camera\images\camera_skins.png" />
+    <Content Include="Lib\js-plugin\camera\images\patterns\overlay1.png" />
+    <Content Include="Lib\js-plugin\camera\images\patterns\overlay10.png" />
+    <Content Include="Lib\js-plugin\camera\images\patterns\overlay2.png" />
+    <Content Include="Lib\js-plugin\camera\images\patterns\overlay3.png" />
+    <Content Include="Lib\js-plugin\camera\images\patterns\overlay4.png" />
+    <Content Include="Lib\js-plugin\camera\images\patterns\overlay5.png" />
+    <Content Include="Lib\js-plugin\camera\images\patterns\overlay6.png" />
+    <Content Include="Lib\js-plugin\camera\images\patterns\overlay7.png" />
+    <Content Include="Lib\js-plugin\camera\images\patterns\overlay8.png" />
+    <Content Include="Lib\js-plugin\camera\images\patterns\overlay9.png" />
+    <Content Include="Lib\js-plugin\camera\images\patterns\_notes\dwsync.xml" />
+    <Content Include="Lib\js-plugin\camera\images\slides\big_bunny_fake.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\bridge.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\leaf.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\road.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\sea.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\shelter.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\thumbs\big_bunny_fake.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\thumbs\bridge.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\thumbs\header_bg.png" />
+    <Content Include="Lib\js-plugin\camera\images\slides\thumbs\leaf.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\thumbs\road.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\thumbs\sea.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\thumbs\shelter.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\thumbs\tree.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\thumbs\_notes\dwsync.xml" />
+    <Content Include="Lib\js-plugin\camera\images\slides\tree.jpg" />
+    <Content Include="Lib\js-plugin\camera\images\slides\_notes\dwsync.xml" />
+    <Content Include="Lib\js-plugin\camera\images\_notes\dwsync.xml" />
+    <Content Include="Lib\js-plugin\easing\jquery.easing.1.3.js" />
+    <Content Include="Lib\js-plugin\hoverdir\css\style.css" />
+    <Content Include="Lib\js-plugin\hoverdir\jquery.hoverdir.js" />
+    <Content Include="Lib\js-plugin\in-view\jquery.inview.js" />
+    <Content Include="Lib\js-plugin\isotope\css\style.css" />
+    <Content Include="Lib\js-plugin\isotope\jquery.isotope.js" />
+    <Content Include="Lib\js-plugin\isotope\jquery.isotope.min.js" />
+    <Content Include="Lib\js-plugin\isotope\jquery.isotope.sloppy-masonry.min.js" />
+    <Content Include="Lib\js-plugin\isotope\_BCK\jquery.isotope.js" />
+    <Content Include="Lib\js-plugin\isotope\_BCK\jquery.isotope.min.js" />
+    <Content Include="Lib\js-plugin\jquery-cookie\jquery.cookie.js" />
+    <Content Include="Lib\js-plugin\jquery-ui\jquery-ui-1.8.23.custom.min.js" />
+    <Content Include="Lib\js-plugin\jquery.sharrre-1.3.4\index.html" />
+    <Content Include="Lib\js-plugin\jquery.sharrre-1.3.4\jquery.sharrre-1.3.4.js" />
+    <Content Include="Lib\js-plugin\jquery.sharrre-1.3.4\jquery.sharrre-1.3.4.min.js" />
+    <Content Include="Lib\js-plugin\jquery\jquery-1.10.2.min.js" />
+    <Content Include="Lib\js-plugin\jquery\jquery.min.js" />
+    <Content Include="Lib\js-plugin\magnific-popup\jquery.magnific-popup.js" />
+    <Content Include="Lib\js-plugin\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Lib\js-plugin\magnific-popup\magnific-popup.css" />
+    <Content Include="Lib\js-plugin\neko-background-video\jquery.backgroundvideo-modified.js" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\css\cmxformTemplate.css" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\img\ajax-loader.gif" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\img\bg-1.png" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\img\bg-2.png" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\img\bg-3.png" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\img\error.gif" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\img\success.gif" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\js\cmxformTemplate.css" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\js\jquery.form.js" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\js\jquery.validate.js" />
+    <Content Include="Lib\js-plugin\neko-contact-ajax-plugin\js\jquery.validate.min.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\css\bootstrapTheme.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\css\custom.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\css\responsive.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\ico\favicon.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\AjaxLoader.gif" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\demo-slides\controls.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\demo-slides\css3.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\demo-slides\feather.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\demo-slides\grab.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\demo-slides\modern.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\demo-slides\multi.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\demo-slides\responsive.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\demo-slides\tons.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\demo-slides\touch.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\demo-slides\zombie.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\glyphicons-halflings-green.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\glyphicons-halflings.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\img\owl-logo.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\js\application.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\js\bootstrap-collapse.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\js\bootstrap-tab.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\js\bootstrap-transition.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\js\google-code-prettify\prettify.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\js\google-code-prettify\prettify.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\js\google-code-prettify\run_prettify.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\assets\js\jquery-1.9.1.min.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\changelog.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\fullimage1.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\fullimage2.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\fullimage3.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\fullimage4.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\fullimage5.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\fullimage6.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\fullimage7.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\owl1.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\owl2.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\owl3.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\owl4.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\owl5.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\owl6.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\owl7.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\assets\owl8.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\autoHeight.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\click.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\custom.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\customJson.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\full.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\images.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\itemsCustom.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\json.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\lazyLoad.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\manipulations.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\navOnTop.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\navOnTop2.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\one.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\owlStatus.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\progressBar.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\randomOrder.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\scaleup.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\sync.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\demos\transitions.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\index.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\owl-carousel\AjaxLoader.gif" />
+    <Content Include="Lib\js-plugin\owl.carousel\owl-carousel\grabbing.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\owl-carousel\owl.carousel.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\owl-carousel\owl.carousel.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\owl-carousel\owl.theme.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\owl-carousel\owl.transitions.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\css\bootstrapTheme.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\css\custom.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\css\responsive.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\ico\favicon.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\AjaxLoader.gif" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\demo-slides\controls.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\demo-slides\css3.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\demo-slides\feather.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\demo-slides\grab.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\demo-slides\modern.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\demo-slides\multi.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\demo-slides\responsive.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\demo-slides\tons.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\demo-slides\touch.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\demo-slides\zombie.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\glyphicons-halflings-green.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\glyphicons-halflings.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\img\owl-logo.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\js\application.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\js\bootstrap-collapse.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\js\bootstrap-tab.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\js\bootstrap-transition.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\js\google-code-prettify\prettify.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\js\google-code-prettify\prettify.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\js\google-code-prettify\run_prettify.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\assets\js\jquery-1.9.1.min.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\changelog.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\fullimage1.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\fullimage2.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\fullimage3.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\fullimage4.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\fullimage5.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\fullimage6.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\fullimage7.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\owl1.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\owl2.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\owl3.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\owl4.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\owl5.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\owl6.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\owl7.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\assets\owl8.jpg" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\autoHeight.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\click.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\custom.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\customJson.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\full.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\images.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\json.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\lazyLoad.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\navOnTop.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\navOnTop2.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\one.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\progressBar.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\randomOrder.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\demos\transitions.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\index.html" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\owl-carousel\AjaxLoader.gif" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\owl-carousel\grabbing.png" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\owl-carousel\owl.carousel.css" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\owl-carousel\owl.carousel.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\owl-carousel\owl.carousel.min.js" />
+    <Content Include="Lib\js-plugin\owl.carousel\_BCK-v1.23\owl-carousel\owl.theme.css" />
+    <Content Include="Lib\js-plugin\parallax\js\jquery.localscroll-1.2.7-min.js" />
+    <Content Include="Lib\js-plugin\parallax\js\jquery.scrollTo-1.4.3.1-min.js" />
+    <Content Include="Lib\js-plugin\parallax\js\jquery.stellar.js" />
+    <Content Include="Lib\js-plugin\parallax\js\jquery.stellar.min.js" />
+    <Content Include="Lib\js-plugin\respond\respond.min.js" />
+    <Content Include="Lib\js-plugin\respond\respond.src.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\css\bootstrap-responsive.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\css\bootstrap.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\css\documenter_style.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\images\image_1.gif" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\images\image_2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\img\glyphicons-halflings.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\img\glyphicons\glyphicons_009_magic.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\img\glyphicons\glyphicons_042_group.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\img\glyphicons\glyphicons_079_podium.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\img\glyphicons\glyphicons_082_roundabout.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\img\glyphicons\glyphicons_155_show_thumbnails.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\img\glyphicons\glyphicons_163_iphone.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\img\glyphicons\glyphicons_214_resize_small.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\img\glyphicons\glyphicons_266_book_open.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\json.txt" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\js\bootstrap-min.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\js\google-code-prettify\prettify.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\js\google-code-prettify\prettify.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\js\jquery.easing.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\js\jquery.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\js\jquery.scrollTo.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\assets\js\scripts.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\css\documenter_style.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\css\img\info.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\css\img\pre_bg.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\css\img\warning.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\css\shDocumenter.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\documentation.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\js\jquery.1.6.4.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\js\jquery.easing.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\js\jquery.scrollTo-1.4.2-min.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\js\script.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\js\shBrushCss.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\js\shBrushJScript.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\js\shBrushXml.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\documentation\js\shCore.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\01.Sample-Boxed.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\02.Sample-Fullwidth.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\03.Sample-FullScreen.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\04.Sample-FullScreen-Offsets.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\05.Sample-Aligns.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\06.Sample-AlignForce.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\07.Sample-Videos.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\08.Sample-NavigationStyle.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\09.Sample-Api.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\10.Sample-LazyLoading.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\11.Sample-Shuffle.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\12.Sample-Backgrounds.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\13.Sample-HideCaptions.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\14.Sample-KenBurns.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\15.Sample-VideoBG.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\16.Caption-ShowDown.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\17.Sample-DottedBG.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\css\navstylechange.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\css\noneed.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\css\style.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\Editor-Captions.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\Editor-Transitions.html" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\assets\logo.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\assets\prebg.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\assets\transparent.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\assets\transparent.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\assets\transtiled.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\assets\trans_tile.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\assets\trans_tile2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\editor.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\editor.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\editor\type\fontello.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\apple.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\bg1.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\bg2.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\bg3.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\bg4.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\clock.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\clock2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\cloud1.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\cloud2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\cloud3.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\darkblurbg.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\dummy.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\graph.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\guy1.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\guy2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\guy3.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\guy4.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\guy5.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\hill1.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\hill2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\hill3.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\hill4.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\huge.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\icon_photo.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\imac1.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\kenburns1.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\kenburns2.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\kenburns3.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\kenburns4.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\kenburns5.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\logo.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\lupe_imac.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\lupe_macbook.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\macbook2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\slidebg1.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\slidebg1.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\star.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\transparent.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\trans_tile2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\tree.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\videobg1.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\videoshadow.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\video_forest.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\images\woman.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\arrowleft.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\arrowright.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\arrow_large_left.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\arrow_large_right.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\arrow_left.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\arrow_left2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\arrow_right.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\arrow_right2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\black50.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\bullet.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\bullets.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\bullets2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\bullet_boxed.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\coloredbg.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\grain.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\gridtile.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\gridtile_3x3.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\gridtile_3x3_white.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\gridtile_white.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\large_left.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\large_right.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\loader.gif" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\loader2.gif" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\navigdots.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\shadow1.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\shadow2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\shadow3.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\small_left.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\small_left_boxed.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\small_right.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\small_right_boxed.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\timer.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\timerdot.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\transparent.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\assets\white50.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\css\settings-ie8.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\css\settings.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\images\decor_inside.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\images\decor_inside_white.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\images\decor_testimonial.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\images\gradient\g30.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\images\gradient\g40.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\videojs\video-js.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\videojs\video-js.min.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\videojs\video-js.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\videojs\video-js.swf" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\videojs\video.dev.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\examples-sources\rs-plugin\videojs\video.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\arrowleft.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\arrowright.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\arrow_large_left.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\arrow_large_right.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\arrow_left.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\arrow_left2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\arrow_right.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\arrow_right2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\black50.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\boxed_bgtile.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\bullet.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\bullets.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\bullets2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\bullet_boxed.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\coloredbg.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\grain.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\gridtile.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\gridtile_3x3.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\gridtile_3x3_white.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\gridtile_white.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\large_left.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\large_right.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\loader.gif" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\loader2.gif" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\navigdots.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\navigdots_bgtile.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\shadow1.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\shadow2.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\shadow3.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\small_left.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\small_left_boxed.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\small_right.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\small_right_boxed.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\timer.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\timerdot.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\transparent.jpg" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\assets\white50.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\css\navstylechange.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\css\settings-hideo.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\css\settings-ie8.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\images\decor_inside.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\images\decor_inside_white.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\images\decor_testimonial.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\images\gradient\g30.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\images\gradient\g40.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\js\jquery.themepunch.plugins.min.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\js\jquery.themepunch.revolution.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\videojs\video-js.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\videojs\video-js.min.css" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\videojs\video-js.png" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\videojs\video-js.swf" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\videojs\video.dev.js" />
+    <Content Include="Lib\js-plugin\revolution-slider\rs-plugin\videojs\video.js" />
+    <Content Include="Lib\js-plugin\smoothscroll\SmoothScroll.js" />
+    <Content Include="Lib\js-plugin\sticky\jquery.sticky.js" />
+    <Content Include="Lib\js-plugin\supersized\css\supersized.css" />
+    <Content Include="Lib\js-plugin\supersized\img\back.png" />
+    <Content Include="Lib\js-plugin\supersized\img\bg-black.png" />
+    <Content Include="Lib\js-plugin\supersized\img\bg-hover.png" />
+    <Content Include="Lib\js-plugin\supersized\img\button-tray-down.png" />
+    <Content Include="Lib\js-plugin\supersized\img\button-tray-up.png" />
+    <Content Include="Lib\js-plugin\supersized\img\forward.png" />
+    <Content Include="Lib\js-plugin\supersized\img\nav-bg.png" />
+    <Content Include="Lib\js-plugin\supersized\img\nav-dot.png" />
+    <Content Include="Lib\js-plugin\supersized\img\pause.png" />
+    <Content Include="Lib\js-plugin\supersized\img\play.png" />
+    <Content Include="Lib\js-plugin\supersized\img\progress-back.png" />
+    <Content Include="Lib\js-plugin\supersized\img\progress-bar.png" />
+    <Content Include="Lib\js-plugin\supersized\img\progress.gif" />
+    <Content Include="Lib\js-plugin\supersized\img\supersized-logo.png" />
+    <Content Include="Lib\js-plugin\supersized\img\thumb-back.png" />
+    <Content Include="Lib\js-plugin\supersized\img\thumb-forward.png" />
+    <Content Include="Lib\js-plugin\supersized\js\supersized.3.2.7.js" />
+    <Content Include="Lib\js-plugin\supersized\js\supersized.3.2.7.min.js" />
+    <Content Include="Lib\js-plugin\supersized\theme\supersized.shutter.css" />
+    <Content Include="Lib\js-plugin\supersized\theme\supersized.shutter.js" />
+    <Content Include="Lib\js-plugin\supersized\theme\supersized.shutter.min.js" />
+    <Content Include="Lib\js-plugin\toucheeffect\toucheffects.js" />
+    <Content Include="Lib\js-plugin\toucheeffect\toucheffects_allJquery.js" />
+    <Content Include="Lib\js-plugin\toucheeffect\toucheffects_ORI.js" />
+    <Content Include="Lib\js-plugin\ytplayer\jquery.mb.YTPlayer.js" />
+    <Content Include="Lib\js-plugin\ytplayer\jquery.mb.YTPlayer_modifed.js" />
+    <Content Include="Lib\js-plugin\ytplayer\YTPlayer.css" />
+    <Content Include="Lib\js\custom.js" />
+    <Content Include="Lib\js\modernizr-2.6.1.min.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\knockout-2.1.0.debug.js" />
+    <Content Include="Scripts\knockout-2.1.0.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Info\DetailBlog.cshtml" />
+    <Content Include="Views\Info\Index.cshtml" />
+    <Content Include="Views\Info\DetailNews.cshtml" />
+    <Content Include="Views\Joinus\Index.cshtml" />
+    <Content Include="Views\Contact\Create.cshtml" />
+    <Content Include="Views\Contact\Detail.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Ko.cshtml" />
+    <Content Include="Views\Product\Eng.cshtml" />
+    <Content Include="Views\Shared\_ContentLayout.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Company\Ko.cshtml" />
+    <Content Include="Views\Company\Eng.cshtml" />
+    <Content Include="Views\Home\Mobile.cshtml" />
+    <Content Include="Views\Shared\_MobileLayout.cshtml" />
+    <Content Include="Views\Company\Mobile.cshtml" />
+    <Content Include="Views\Product\Mobile.cshtml" />
+    <Content Include="Views\Contact\Mobile.cshtml" />
+    <Content Include="Views\Joinus\Mobile.cshtml" />
+    <Content Include="Views\Info\Mobile.cshtml" />
+    <Content Include="Views\Info\Mo_DetailBlog.cshtml" />
+    <Content Include="Views\Info\Mo_DetailNews.cshtml" />
+    <Content Include="Views\Contact\Mo_Detail.cshtml" />
+    <Content Include="Views\Contact\Mo_Create.cshtml" />
+    <Content Include="Views\Management\Index.cshtml" />
+    <Content Include="Views\Shared\_ManagementLayout.cshtml" />
+    <Content Include="Views\Management\Advise.cshtml" />
+    <Content Include="Views\Management\Lunch.cshtml" />
+    <Content Include="Views\Management\News.cshtml" />
+    <Content Include="Views\Management\Blog.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Management\GOQUAL_User.cshtml" />
+    <Content Include="Views\Management\CreateNews.cshtml" />
+    <Content Include="Views\Management\DetailNews.cshtml" />
+    <Content Include="Views\Management\CreateAdvise.cshtml" />
+    <Content Include="Views\Management\DetailAdvise.cshtml" />
+    <Content Include="Views\Shared\_AccountLayout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\VIEWMODEL\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:16622/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

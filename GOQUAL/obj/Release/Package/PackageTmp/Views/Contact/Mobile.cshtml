@@ -1,0 +1,310 @@
+﻿@model GOQUAL.Views.Contact.IndexViewModel
+@{
+    Layout = "~/Views/Shared/_MobileLayout.cshtml";
+}
+@section Style {
+    <link href="~/Lib/GOQUAL/css/mobile/contact.css" rel="stylesheet" />
+}
+@section Script
+{
+    <script type="text/javascript">
+        try { document.execCommand('BackgroundImageCache', false, true); } catch (e) { }
+    </script>
+
+    @if (Request.Url.ToString() == "http://localhost:16622/Contact/Mobile?lang=0")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=bed84d4d949b7f037b81303ab64e9afa"></script>
+    }
+    else if (Request.Url.ToString() == "http://localhost:16622/Contact/Mobile")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=bed84d4d949b7f037b81303ab64e9afa"></script>
+    }
+    else if (Request.Url.ToString() == "http://localhost:16622/Contact/Mobile?lang=1")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=bed84d4d949b7f037b81303ab64e9afa"></script>
+    }
+
+    else if (Request.Url.ToString() == "http://www.goqual.com/Contact/Mobile")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=d0c6333df5a3555731760f2b55c14bee"></script>        
+    }
+    else if (Request.Url.ToString() == "http://www.goqual.com/Contact/Mobile?lang=0")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=d0c6333df5a3555731760f2b55c14bee"></script>        
+    }
+    else if (Request.Url.ToString() == "http://www.goqual.com/Contact/Mobile?lang=1")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=d0c6333df5a3555731760f2b55c14bee"></script>        
+    }
+
+    else if (Request.Url.ToString() == "http://goqual.com/Contact/Mobile")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=035015e071fef5df51f82ec27d3fcab3"></script>        
+    }
+    else if (Request.Url.ToString() == "http://goqual.com/Contact/Mobile?lang=0")
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=035015e071fef5df51f82ec27d3fcab3"></script>        
+    }
+    else
+    {
+        <script type="text/javascript" src="http://openapi.map.naver.com/openapi/naverMap.naver?ver=2.0&key=035015e071fef5df51f82ec27d3fcab3"></script>
+    }
+    <!-- ngTable -->
+    <script src="~/Lib/GOQUAL/js/angular.js"></script>
+    <script src="~/Lib/GOQUAL/js/filters.js"></script>
+    <script src="~/Lib/GOQUAL/js/ng-table.js"></script>
+    <script src="~/Lib/GOQUAL/js/ngTableResetPage.js"></script>
+    <script src="~/Lib/GOQUAL/js/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="~/Lib/GOQUAL/js/underscore-min.js"></script>
+    <script src="~/Lib/GOQUAL/js/ajaxBody.js"></script>
+    <script src="~/Lib/GOQUAL/js/Contact/mobile.js"></script>
+}
+<input type="hidden" id="isMobile" value="1" />
+<!-- Navigation panel -->
+<nav class="main-nav js-stick stick-fixed">
+    <div class="full-wrapper relative clearfix">
+        <div class="nav-logo-wrap local-scroll">
+            <a href="#top" class="logo">
+                <img src="~/Lib/GOQUAL/images/ci/1.png" width="80" height="27" alt="" /></a>
+        </div>
+        <div class="mobile-nav"><i class="fa fa-bars"></i></div>
+        <div class="inner-nav desktop-nav">
+            <ul class="clearlist scroll-nav local-scroll">
+                <li class="active"><a href="/Home/Mobile?lang=@(Model.Lang)">HOME</a></li>
+                <li><a href="/Company/Mobile?lang=@(Model.Lang)">COMPANY</a></li>
+                <li><a href="/Product/Mobile?lang=@(Model.Lang)">PRODUCT</a></li>
+                <li><a href="/Contact/Mobile?lang=@(Model.Lang)">CONTACT</a></li>
+                <li><a href="/Joinus/Mobile?lang=@(Model.Lang)">JOIN US</a></li>
+                <li><a href="/Info/Mobile?lang=@(Model.Lang)">NEWS</a></li>
+                <li>
+                    <a href="#" class="mn-has-sub">LANGUAGE <i class="fa fa-angle-down"></i></a>
+                    <ul class="mn-sub">
+                        <li><a href="/Contact/Mobile?lang=0">KOREA</a></li>
+                        <li><a href="/Contact/Mobile?lang=1">ENGLISH</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div ng-controller="ContactCtrl">
+    <!-- About Us Section -->
+    <section class="page-section pt-50" id="about" style="padding: 0">
+        <div class="container relative">
+
+            <!-- Nav Tabs -->
+            <div class="align-center mb-50 mb-xxs-30">
+                <ul class="nav nav-tabs tpl-minimal-tabs animate goqual_tab">
+                    <li class="active">
+                        <a href="#company" data-toggle="tab">Company</a>
+                    </li>
+                    <li>
+                        <a href="#advise" data-toggle="tab">Advise</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content tpl-minimal-tabs-cont">
+                <div class="tab-pane fade in active" id="company">
+                    <div class="row">
+                        <div class="col-md-12 mapBox align-c" id="makaluMap"></div>
+                        <!-- Contact Section -->
+                        <section class="page-section bg-scroll goqual_company_text_color" id="contact">
+                            <div class="container relative">
+                                <div class="row">
+                                    <!-- Contact Info -->
+                                    <div class="col-md-4">
+                                        <div class="contact-item mb-40 mb-md-20 goqual_company_text_color">
+                                            <div class="ci-icon">
+                                                <i class="fa fa-phone"></i>
+                                            </div>
+                                            <div class="ci-title ">Call Us</div>
+                                            <div class="ci-phone">070.4738.3000</div>
+                                        </div>
+                                        <div class="contact-item mb-40 mb-md-20 goqual_company_text_color">
+                                            <div class="ci-icon">
+                                                <i class="fa fa-map-marker"></i>
+                                            </div>
+                                            <div class="ci-title ">Address</div>
+                                            <div class="ci-text goqual_company_text_color">
+                                                @if (Model.Lang == 0)
+                                                {
+                                                    @:대구광역시 동수 동대구로 475 대구테크노파크 12층 도담관
+                                                }
+                                                else
+                                                {
+                                                    @:Daegu, Korea 475, Dongdaegu-ro, Dong-gu 12th floor, dodamkwan
+                                            }
+                                            </div>
+                                        </div>
+                                        <div class="contact-item mb-md-40 goqual_company_text_color">
+                                            <div class="ci-icon">
+                                                <i class="fa fa-envelope"></i>
+                                            </div>
+                                            <div class="ci-title">Email</div>
+                                            <div class="ci-text goqual_company_text_color">GQ@goqual.com</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7 col-md-offset-1 goqual_company_text_color">
+                                        <!-- Contact Form -->
+                                        <form class="form contact-form" id="contact_form" autocomplete="off">
+                                            <div class="clearfix mb-20 mb-xs-0">
+                                                <div class="cf-left-col">
+                                                    <!-- Name -->
+                                                    <div class="form-group">
+                                                        <input type="text" name="name" id="name" class="ci-field form-control"
+                                                            ng-model="name"
+                                                            placeholder="Name" pattern=".{3,100}" required>
+                                                    </div>
+
+                                                    <!-- Email -->
+                                                    <div class="form-group">
+                                                        <input type="email" name="email" id="email" class="ci-field form-control"
+                                                            ng-model="email"
+                                                            placeholder="Email" pattern=".{5,100}" required>
+                                                    </div>
+
+                                                    <!-- phone -->
+                                                    <div class="form-group">
+                                                        <input type="text" class="ci-field form-control"
+                                                            ng-model="phone"
+                                                            placeholder="Phone" required>
+                                                    </div>
+                                                </div>
+                                                <div class="cf-right-col">
+                                                    <!-- Message -->
+                                                    <div class="form-group">
+                                                        <label for="message" class="goqual_company_text_color">Message</label>
+                                                        <textarea name="message" id="message"
+                                                            ng-model="content"
+                                                            class="ci-area form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Send Button -->
+                                            <button class="submit_btn btn btn-mod btn-large btn-full ci-btn" ng-click="sendMessage()">
+                                                Send
+                                            </button>
+                                            <div id="result"></div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div class="tab-pane fade" id="advise">
+                    <div class="row" style="padding: 10px;">
+                        <p class="goqual_tab_title">
+                            @if (Model.Lang == 0)
+                            {
+                                @:GOQUAL은 여러분들의 쓴소리와 조언을 격하게 환영합니다
+                                }
+                            else
+                            {
+                                @:Welcome to the your advise for GOQUAL
+                                }
+                        </p>
+                        <div class="goqual_tab_table_body">
+                            @if (Model.Lang == 0)
+                            {
+                                <table ng-table="tableParams" class="table table-striped goqual_table">
+                                    <tr ng-repeat="item in advise.items">
+                                        <td data-title="'번호'" sortable="'Id'" style="vertical-align: middle;">
+                                            <span ng-if="!item.$edit">{{item.Id}}</span>
+                                            <div ng-if="item.$edit">
+                                                비밀번호
+                                            </div>
+                                        </td>
+                                        <td data-title="'제목'" sortable="'Label'">
+                                            <span ng-if="!item.$edit">
+                                                <a class="goqual_table_link" ng-click="item.$edit = true">{{item.Title}}</a>
+                                            </span>
+                                            <div ng-if="item.$edit">
+                                                <input class="form-control goqual_table_password" type="password" ng-model="item.password" />
+                                            </div>
+                                        </td>
+                                        <td data-title="'생성일'" sortable="'Created'">
+                                            <span ng-if="!item.$edit">{{item.Created | shortdate}}</span>
+                                            <span ng-if="item.$edit">
+                                                <a ng-if="item.$edit" style="float: right;" class="btn btn-default btn-xs goqual_table_button" ng-click="detailAdvise(item)">확인</a>
+                                            </span>
+                                        </td>
+                                        <td data-title="'보기'">
+                                            <a ng-if="!item.$edit" href="" class="btn btn-default btn-xs" ng-click="item.$edit = true">보기</a>
+                                            <a ng-if="item.$edit" style="float: left;" class="btn btn-default btn-xs goqual_table_button" ng-click="item.$edit = false">취소</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            }
+                            else
+                            {
+                                <table ng-table="tableParams" class="table table-striped goqual_table">
+                                    <tr ng-repeat="item in advise.items">
+                                        <td data-title="'Index'" sortable="'Id'" style="vertical-align: middle;">
+                                            <span ng-if="!item.$edit">{{item.Id}}</span>
+                                            <div ng-if="item.$edit">
+                                                Password
+                                            </div>
+                                        </td>
+                                        <td data-title="'Title'" sortable="'Label'">
+                                            <span ng-if="!item.$edit">
+                                                <a class="goqual_table_link" ng-click="item.$edit = true">{{item.Title}}</a>
+                                            </span>
+                                            <div ng-if="item.$edit">
+                                                <input class="form-control goqual_table_password" type="password" ng-model="item.password" />
+                                            </div>
+                                        </td>
+                                        <td data-title="'Created'" sortable="'Created'">
+                                            <span ng-if="!item.$edit">{{item.Created | shortdate}}</span>
+                                            <span ng-if="item.$edit">
+                                                <a ng-if="item.$edit" style="float: right;" class="btn btn-default btn-xs goqual_table_button_eng"
+                                                    ng-click="detailAdvise(item)">Confirm</a>
+                                            </span>
+                                        </td>
+                                        <td data-title="'Detail'">
+                                            <a ng-if="!item.$edit" href="" class="btn btn-default btn-xs" ng-click="item.$edit = true">Detail</a>
+                                            <a ng-if="item.$edit" style="float: left;" class="btn btn-default btn-xs goqual_table_button_eng"
+                                                ng-click="item.$edit = false">Cancel</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            }
+
+                            <ul class="pager">
+                                <li>
+                                    <a href="/Contact/Mo_Create?lang=@(Model.Lang)">
+                                        @if (Model.Lang == 0)
+                                        {
+                                            @:글 작성
+                                        }
+                                        else
+                                        {
+                                            @: Send Advise
+                                        }
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- scroll up -->
+    <div class="bot-menu local-scroll">
+        <!-- Scroll Up -->
+        <a href="#top" class="bot-menu-item" data-anim-type="fade-in-left" data-anim-delay="0">
+            <span class="bot-menu-icon">
+                <i class="fa fa-arrow-circle-o-up"></i>
+            </span>
+            Scroll Up
+        </a>
+    </div>
+</div>

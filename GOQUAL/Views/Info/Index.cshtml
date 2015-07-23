@@ -1,0 +1,234 @@
+﻿@model GOQUAL.Views.Info.IndexViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Script {
+    <!-- isotope -->
+    <script type="text/javascript" src="~/Lib/js-plugin/isotope/jquery.isotope.min.js"></script>
+    <script type="text/javascript" src="~/Lib/js-plugin/isotope/jquery.isotope.sloppy-masonry.min.js"></script>
+    <!-- sharrre -->
+    <script type="text/javascript" src="~/Lib/js-plugin/jquery.sharrre-1.3.4/jquery.sharrre-1.3.4.min.js"></script>
+    <!-- toucheeffect -->
+    <script type="text/javascript" src="~/Lib/js-plugin/toucheeffect/toucheffects.js"></script>
+
+    <!-- ngTable -->
+    <script src="~/Lib/GOQUAL/js/ng-table.js"></script>
+    <script src="~/Lib/GOQUAL/js/ngTableResetPage.js"></script>
+    <script src="~/Lib/GOQUAL/js/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="~/Lib/GOQUAL/js/Info/Info.js"></script>
+}
+@section Style {
+    <link href="~/Lib/GOQUAL/css/ng-table.css" rel="stylesheet" />
+}
+
+@Html.HiddenFor(x => x.Lang)
+<div ng-controller="InfoCtrl">
+    <header class="navbar-fixed-top">
+        <!-- header -->
+        <div id="mainHeader" role="banner">
+            <div class="container">
+                <nav class="navbar navbar-default scrollMenu" role="navigation">
+                    <div class="navbar-header">
+                        <!-- responsive navigation -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="navbar-toggle">
+                            <a href="/Home/Korea" class="goqual_lang_ko" style="font-size: 13px;">한국어</a>
+                            |
+                        <a href="/Home/English" class="goqual_lang_eng" style="font-size: 13px;">ENGLISH</a>
+                        </div>
+                        <!-- Logo -->
+                        <a class="navbar-brand" href="/Home/Index?lang=@(Model.Lang)">
+                            <img class="goqual_menu_header" src="~/Lib/GOQUAL/images/ci/1.png" alt="GOQUAL 고퀄 주식회사" />
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="mainMenu">
+                        <ul class="language_menu_dropdown nav navbar-nav pull-right goqual_lang_menu">
+                            <li class="primary goqual_lang_ko">
+                                <a ng-click="changeLang_ko()" class="firstLevel">한국어</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary goqual_lang_eng">
+                                <a ng-click="changeLang_eng()" class="firstLevel">ENGLISH</a>
+                            </li>
+                        </ul>
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="primary">
+                                <a href="/Home/Index?lang=@(Model.Lang)" class="firstLevel">HOME</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary">
+                                <a href="/Company/Index?lang=@(Model.Lang)" class="firstLevel">COMPANY</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary">
+                                <a href="/Product/Index?lang=@(Model.Lang)" class="firstLevel">PRODUCT</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary">
+                                <a href="/Contact/Index?lang=@(Model.Lang)" class="firstLevel">CONTACT</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary">
+                                <a href="/Joinus/Index?lang=@(Model.Lang)" class="firstLevel">JOIN US</a>
+                            </li>
+                            <li class="sep"></li>
+                            <li class="primary">
+                                <a href="/Info/Index?lang=@(Model.Lang)" class="firstLevel">NEWS</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="page" class="tabsDetails goqual_container" data-nekoanim="fadeInUp" data-nekodelay="100">
+        <header class="page-header mb30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>OUR STORY</h1>
+                        @if (Model.Lang == 0)
+                        {
+                            <p>BETTER LIFE를 통한 더 나은 세상. QUALITY있는 세상을 만드는 기업 고퀄입니다.</p>
+                        }
+                        else
+                        {
+                            <p>BETTER WORLD THROUGH BETTER LIFE. THE COMPANY GOQUAL CREATE A WORLD WHERE QUALITY.</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container mt40">
+            <div class="row">
+                <!-- side menu -->
+                <div class="col-md-3">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="active">
+                            <a href="#news" data-toggle="tab">NEWS</a>
+                        </li>
+                        <li class="">
+                            <a href="#blog" data-toggle="tab">BLOG</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Content -->
+                <div class="col-md-9">
+                    <div class="tab-content">
+                        <!-- news-->
+                        <div class="tab-pane fade in active" id="news">
+                            <div class="row">
+                                <div class="content_body">
+                                    @if (Model.Lang == 0)
+                                    {
+                                        <p class="goqual_tab_title">GOQUAL의 새로운 소식입니다</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="goqual_tab_title">THE NEWS OF GOQUAL</p>
+                                    }
+                                    <div class="goqual_tab_table_body">
+                                        @if (Model.Lang == 0)
+                                        {
+                                            <table ng-table="tableParams" class="table table-striped goqual_table">
+                                                <tr ng-repeat="item in news.items">
+                                                    <td data-title="'번호'" sortable="'Id'" style="vertical-align: middle;">{{item.Id}}
+                                                    </td>
+                                                    <td data-title="'제목'" sortable="'Label'">
+                                                        <a href="/Info/DetailNews?id={{item.Id}}&lang=@(Model.Lang)">{{item.Title}}</a>
+                                                    </td>
+                                                    <td data-title="'생성일'" sortable="'Address'">{{item.Created | shortdate}}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        }
+                                        else
+                                        {
+                                            <table ng-table="tableParams" class="table table-striped goqual_table">
+                                                <tr ng-repeat="item in news.items">
+                                                    <td data-title="'Index'" sortable="'Id'" style="vertical-align: middle;">{{item.Id}}
+                                                    </td>
+                                                    <td data-title="'Title'" sortable="'Label'">
+                                                        <a href="/Info/DetailNews?id={{item.Id}}">{{item.Title}}</a>
+                                                    </td>
+                                                    <td data-title="'Created'" sortable="'Address'">{{item.Created | shortdate}}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- blog -->
+                        <div class="tab-pane fade" id="blog">
+                            <section>
+                                <section id="content">
+                                    <section class="pt30 pb30">
+                                        <div class="container clearfix">
+                                            <div class="row">
+                                                @*<nav id="filter" class="span12 text-center">
+                                                <div class="btn-group">
+                                                    <a href="" class="btn btn-default" data-filter="*">All</a>
+                                                    <a href="" class="btn btn-default" data-filter=".graphics">Graphics</a>
+                                                    <a href="" class="btn btn-default" data-filter=".women">Women</a>
+                                                    <a href="" class="btn btn-default" data-filter=".cats">Cats</a>
+                                                </div>
+                                            </nav>*@
+                                                <div class="mt30 portfolio-items  isotopeWrapper clearfix imgHover neko-hover-1" id="2">
+                                                    @foreach (var blog in Model.Blogs)
+                                                    {
+                                                        <!-- portfolio item -->
+                                                        <article class="col-sm-4 isotopeItem women mb15">
+                                                            <figure>
+                                                                <a href="/Info/DetailBlog?id=@(blog.Id)">
+                                                                    <img alt="" src="/Info/GetBlogImage?id=@(blog.FirstBlogImage.Id)" class="img-responsive">
+                                                                </a>
+                                                                <figcaption>
+                                                                    <ul class="pinInfo">
+                                                                        <li><a href=""><i class="icon-eye"></i>@(blog.Hit)</a></li>
+                                                                        <li><a href=""><i class="icon-comment-1"></i>@(blog.Comments.Count)</a></li>
+                                                                    </ul>
+                                                                    <div class="iconLinks">
+                                                                        <a href="/Info/DetailBlog?id=@(blog.Id)">
+                                                                            <i class="icon-search"></i>
+                                                                        </a>
+                                                                    </div>
+                                                                </figcaption>
+                                                            </figure>
+                                                            <section class="boxContent">
+                                                                <h3>@(blog.Title)</h3>
+                                                                <p>
+                                                                    @(blog.Updated)
+                                                                </p>
+                                                            </section>
+                                                        </article>
+                                                    }
+                                                </div>
+                                                @*<div class="row" ng-show="isMoreShow">
+                                                    <div class="col-md-12 mt30">
+                                                        <input type="button" class="btn btn-lg" style="width: 100%" value="더보기" ng-click="moreBlogs()" />
+                                                    </div>
+                                                </div>*@
+                                            </div>
+                                        </div>
+                                    </section>
+                                </section>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

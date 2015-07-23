@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="63e514a3984c44ca92cce579ff4b0888" Name="다이어그램1" ZoomLevel="55">
+        <EntityTypeShape EntityType="GoqualDB.sysdiagram" Width="1.5" PointX="1.4292983177254435" PointY="13.216165310338216" />
+        <EntityTypeShape EntityType="GoqualDB.Advise" Width="1.5" PointX="0.34313684904162628" PointY="8.4893157372667059" />
+        <EntityTypeShape EntityType="GoqualDB.AdviseComment" Width="1.5" PointX="7.3719183818306391" PointY="7.858016524397776" />
+        <EntityTypeShape EntityType="GoqualDB.Blog" Width="1.5" PointX="11.350780723314164" PointY="1.1382326489026811" />
+        <EntityTypeShape EntityType="GoqualDB.BlogImage" Width="1.5" PointX="2.0729180192914409" PointY="6.6966817857216494" />
+        <EntityTypeShape EntityType="GoqualDB.BlogType" Width="1.5" PointX="5.4693103197353476" PointY="17.508116327928434" />
+        <EntityTypeShape EntityType="GoqualDB.Comment" Width="1.5" PointX="2.2435891079919363" PointY="10.356826191002888" />
+        <EntityTypeShape EntityType="GoqualDB.Lunch" Width="1.5" PointX="0.43214709518111644" PointY="19.901050740806877" />
+        <EntityTypeShape EntityType="GoqualDB.News" Width="1.5" PointX="11.199432056024406" PointY="12.617811402593652" />
+        <EntityTypeShape EntityType="GoqualDB.NewsComment" Width="1.5" PointX="2.7856286758490039" PointY="23.015682350385788" />
+        <EntityTypeShape EntityType="GoqualDB.SomelightUser" Width="1.5" PointX="6.5403955553380753" PointY="26.99425671761588" />
+        <EntityTypeShape EntityType="GoqualDB.User" Width="1.5" PointX="3.7586326244094561" PointY="6.4741999090063382" />
+        <AssociationConnector Association="GoqualDB.FK_Advise_AdviseComment" />
+        <AssociationConnector Association="GoqualDB.FK_AdviseComment_AdviseComment1" />
+        <AssociationConnector Association="GoqualDB.FK_Blog_BlogType" />
+        <AssociationConnector Association="GoqualDB.FK_Blog_Comment1" />
+        <AssociationConnector Association="GoqualDB.FK_Comment_Comment" />
+        <AssociationConnector Association="GoqualDB.FK_News_NewsComment" />
+        <AssociationConnector Association="GoqualDB.FK_NewsComment_NewsComment1" />
+        <AssociationConnector Association="GoqualDB.BlogToBlogImage" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

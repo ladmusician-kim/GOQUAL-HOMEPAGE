@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BlueSwitchDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="GoqualEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="BlueSwitchDB.Category" />
+    <EntitySet Name="GoqualUsers" EntityType="BlueSwitchDB.GoqualUser" />
+    <EntitySet Name="Users" EntityType="BlueSwitchDB.User" />
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="C_id" />
+    </Key>
+    <Property Type="Int32" Name="C_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="title" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="created" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="updated" Precision="0" />
+    <Property Type="Boolean" Name="isdeprecated" Nullable="false" />
+    <Property Type="Boolean" Name="issubcategory" />
+  </EntityType>
+  <EntityType Name="GoqualUser">
+    <Key>
+      <PropertyRef Name="C_id" />
+    </Key>
+    <Property Type="Int32" Name="C_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="username" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="password" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="created" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="logined" Precision="0" />
+    <Property Type="Boolean" Name="isdeprecated" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="C_id" />
+    </Key>
+    <Property Type="Int32" Name="C_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="username" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="password" Nullable="false" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="created" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="logined" Precision="0" />
+    <Property Type="Boolean" Name="isdeprecated" Nullable="false" />
+  </EntityType>
+</Schema>
